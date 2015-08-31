@@ -42,4 +42,12 @@ $(document).ready(function(){
 	          return $('#newsPopoverContent').html();
 	        }
 	});
+	
+    $("#loginLink").click(function(){
+        $("#loginModal").modal();
+    });
+    
+    $("#registerLink").click(function(){
+        $("#registerModal").modal();
+    });
 });

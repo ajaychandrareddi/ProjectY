@@ -31,3 +31,8 @@
   padding: 19px 20px;
   font-size: 14px;
 }
+
+.modal-dialog{
+	width: 400px;
+	top: 30%;
+}

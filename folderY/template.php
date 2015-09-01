@@ -10,19 +10,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css"> 
   
   <!-- BootstrapValidator CSS -->
-  <link rel="stylesheet" href="../bootstrapValidator/css/bootstrapValidator.min.css">
+  <link rel="stylesheet" href="../dist/css/bootstrapValidator.min.css">
   
   <!-- GoogleApis Jquery -->
-  <script src="../googleapis/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
   
   <!-- Bootstrap JS -->
-  <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
   
   <!-- BootstrapValidator JS -->
-  <script src="../bootstrapValidator/js/bootstrapValidator.min.js"></script>
+  <script src="../dist/js/bootstrapValidator.min.js"></script>
   
   <!-- Local Use -->
   <script type="text/javascript" src="../js/header.js"></script>

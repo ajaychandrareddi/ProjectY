@@ -61,7 +61,7 @@ function footerCode(){
 //Code for Top Right Links
 function topRightLinks(){
 	if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])){
-			echo '<a href="#" id="registerLink"><span class="glyphicon glyphicon-user"></span> Register</a> | <a href="#" id="loginLink"><span class="glyphicon glyphicon-log-in"></span> Login</a>';
+			echo '<a href="#" data-toggle="modal" data-target="#registerModal"><span class="glyphicon glyphicon-user"></span> Register</a> | <a href="#" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> Login</a>';
 			} else {				
 			$user_id = $_SESSION['user_id'];
 			echo '<a href="myAccount.php">My Account</a> | <a href="logout.php">Logout</a>';
@@ -69,12 +69,10 @@ function topRightLinks(){
 }
 
 //Code for Login Modal
+function loginModalCode(){
 echo "
 		  <div class='modal fade' id='loginModal' role='dialog'>
 		    <div class='modal-dialog'>
-
-
-		      <!-- Modal content-->
 		      <div class='modal-content'>
 		        <div class='modal-header'>
 		          <button type='button' class='close' data-dismiss='modal'>&times;</button>
@@ -105,47 +103,47 @@ echo "
 			</div>
 		  </div>
 			";
+}
 
 
 //Code for Registration Modal
-echo "
-		  <div class='modal fade' id='registerModal' role='dialog'>
-		    <div class='modal-dialog'>
-
-
-		      <!-- Modal content-->
-		      <div class='modal-content'>
-		        <div class='modal-header'>
-		          <button type='button' class='close' data-dismiss='modal'>&times;</button>
-		          <h4><span class='glyphicon glyphicon-lock'></span> New Account</h4>
-		        </div>
-		        <div class='modal-body'>
-		          <form id='registerForm' role='form' method='post' action='#'>
-		            <div class='form-group'>
-		              <label for='username'><span class='glyphicon glyphicon-user'></span> Username</label>
-		              <input type='text' id='username' name='username' class='form-control' placeholder='Enter Username'>
-		            </div>
-					<div class='form-group'>
-		              <label for='email'><span class='glyphicon glyphicon-envelope'></span> Email</label>
-		              <input type='text' id='email' name='email' class='form-control' placeholder='Enter Email'>
-		            </div>
-		            <div class='form-group'>
-		              <label for='password'><span class='glyphicon glyphicon-eye-open'></span> Password</label>
-		              <input type='text' id='password' name='password' class='form-control' placeholder='Enter Password'>
-		            </div>
-					<div>
-			            <div class='checkbox'>
-			              <label><input type='checkbox' value=''>I am an Industry Professional</label>
-			            </div>
+function registerModalCode(){
+echo '
+		<div class="modal fade" id="registerModal" name="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4><span class="glyphicon glyphicon-lock"></span> New Account</h4>
 					</div>
-		              <button type='submit' class='btn btn-primary'><span class='glyphicon glyphicon-thumbs-up'></span> Register</button>
-					  <button type='submit' class='btn btn-default' data-dismiss='modal'><span class='glyphicon glyphicon-remove'></span> Cancel</button>
-		          </form>
-		        </div>
-		       </div>
-
+					<div class="modal-body">
+					  <form id="registerForm" method="post" action="post.php">
+					    <div class="form-group">
+					      <label for="username"><span class="glyphicon glyphicon-user"></span> Username</label>
+					      <input type="text" id="username" name="username" class="form-control" placeholder="Enter Username">
+					    </div>
+							<div class="form-group">
+					      <label for="email"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+					      <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email">
+					    </div>
+					    <div class="form-group">
+					      <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+					      <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password">
+					    </div>
+						<div class="form-group">
+						    <div class="checkbox">
+						      <label><input type="checkbox" value="">I am an Industry Professional</label>
+						    </div>
+						</div>
+						<div class="form-group">
+					       <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-thumbs-up"></span> Register</button>
+						   <button type="submit" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+						</div>
+					  </form>
+					</div>
+				</div>
 			</div>
-		  </div>
-			";
-
+		</div>
+		';
+}
 ?>

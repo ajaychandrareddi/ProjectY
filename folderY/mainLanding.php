@@ -1,6 +1,6 @@
 <?php 
 
-	include("../includes/dbconnect.php");
+//	include("../includes/dbconnect.php");
 	include("../includes/html_codes.php");
 	
 ?>
@@ -12,26 +12,25 @@
   <meta charset="utf-8">
   
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css"> 
   
   <!-- BootstrapValidator CSS -->
-  <link rel="stylesheet" href="../bootstrapValidator/css/bootstrapValidator.min.css">
+  <link rel="stylesheet" href="../dist/css/bootstrapValidator.min.css">
   
   <!-- GoogleApis Jquery -->
-  <script src="../googleapis/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
   
   <!-- Bootstrap JS -->
-  <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
   
   <!-- BootstrapValidator JS -->
-  <script src="../bootstrapValidator/js/bootstrapValidator.min.js"></script>
+  <script src="../dist/js/bootstrapValidator.min.js"></script>
 
   
   <!-- Local Use -->
-  <script type="text/javascript" src="../js/header.js"></script>
-  <script type="text/javascript" src="../js/loginValidation.js"></script>
   <link rel="stylesheet" href="../css/main.css">
-  
+  <script type="text/javascript" src="../js/header.js"></script>
+ 
 </head>
 <body>  
 	<div class="container-fluid">
@@ -39,6 +38,10 @@
 	  
 	  	<?php footerCode(); ?>           
 	</div>
+	<?php loginModalCode(); ?>
+	<script src="../js/loginValidation.js"></script>
+	<?php registerModalCode(); ?>
+	<script src="../js/registerValidation.js"></script>
 </body>
 </html>
  

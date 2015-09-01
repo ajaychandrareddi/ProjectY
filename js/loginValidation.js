@@ -1,12 +1,12 @@
 $(document).ready(function() {
-    $('#loginForm').formValidation({
-        framework: 'bootstrap',
-        excluded: ':disabled',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
+	$('#loginForm').bootstrapValidator({
+		exclude: [':disabled'],
+		message: 'This value is not valid',
+		feedbackIcons: {
+	        valid: 'glyphicon glyphicon-ok',
+	        invalid: 'glyphicon glyphicon-remove',
+	        validating: 'glyphicon glyphicon-refresh'
+	    },
         fields: {
             username: {
                 validators: {

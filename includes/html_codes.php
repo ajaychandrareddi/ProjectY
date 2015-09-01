@@ -81,14 +81,14 @@ echo "
 		          <h4><span class='glyphicon glyphicon-lock'></span> Login</h4>
 		        </div>
 		        <div class='modal-body'>
-		          <form id='loginForm' role='form'>
+		          <form id='loginForm' role='form' method='post' action='#'>
 		            <div class='form-group'>
-		              <label for='email'><span class='glyphicon glyphicon-user'></span> Username</label>
-		              <input type='text' id='email' name='email' class='form-control' placeholder='Enter email'>
+		              <label for='username'><span class='glyphicon glyphicon-user'></span> Username</label>
+		              <input type='text' id='username' name='username' class='form-control' placeholder='Enter Username'>
 		            </div>
 		            <div class='form-group'>
 		              <label for='password'><span class='glyphicon glyphicon-eye-open'></span> Password</label>
-		              <input type='text' id='password' name='password' class='form-control' placeholder='Enter password'>
+		              <input type='text' id='password' name='password' class='form-control' placeholder='Enter Password'>
 		            </div>
 					<div>
 			            <div class='checkbox'>
@@ -96,8 +96,8 @@ echo "
 			            </div>
 						<p class='pull-right'><a href='#'>Forgot Password?</a></p>
 					</div>
-		              <button type='submit' id='submit' name='submit' class='btn btn-success'><span class='glyphicon glyphicon-off'></span> Login</button>
-					  <button type='submit' class='btn btn-danger btn-default' data-dismiss='modal'><span class='glyphicon glyphicon-remove'></span> Cancel</button>
+		              <button type='submit' class='btn btn-primary'><span class='glyphicon glyphicon-off'></span> Login</button>
+					  <button type='submit' class='btn btn-default' data-dismiss='modal'><span class='glyphicon glyphicon-remove'></span> Cancel</button>
 		          </form>
 		        </div>
 		       </div>
@@ -116,29 +116,29 @@ echo "
 		      <div class='modal-content'>
 		        <div class='modal-header'>
 		          <button type='button' class='close' data-dismiss='modal'>&times;</button>
-		          <h4><span class='glyphicon glyphicon-lock'></span> Login</h4>
+		          <h4><span class='glyphicon glyphicon-lock'></span> New Account</h4>
 		        </div>
 		        <div class='modal-body'>
-		          <form id='registerForm' role='form'>
+		          <form id='registerForm' role='form' method='post' action='#'>
 		            <div class='form-group'>
-		              <label for='email'><span class='glyphicon glyphicon-user'></span> Username</label>
-		              <input type='text' id='email' name='email' class='form-control' placeholder='Enter email'>
+		              <label for='username'><span class='glyphicon glyphicon-user'></span> Username</label>
+		              <input type='text' id='username' name='username' class='form-control' placeholder='Enter Username'>
+		            </div>
+					<div class='form-group'>
+		              <label for='email'><span class='glyphicon glyphicon-envelope'></span> Email</label>
+		              <input type='text' id='email' name='email' class='form-control' placeholder='Enter Email'>
 		            </div>
 		            <div class='form-group'>
 		              <label for='password'><span class='glyphicon glyphicon-eye-open'></span> Password</label>
-		              <input type='text' id='password' name='password' class='form-control' placeholder='Enter password'>
-		            </div>
-					<div class='form-group'>
-		              <label for='confirmpassword'><span class='glyphicon glyphicon-eye-open'></span> Confirm Password</label>
-		              <input type='text' id='confirmpassword' name='confirmpassword' class='form-control' placeholder='Confirm password'>
+		              <input type='text' id='password' name='password' class='form-control' placeholder='Enter Password'>
 		            </div>
 					<div>
 			            <div class='checkbox'>
 			              <label><input type='checkbox' value=''>I am an Industry Professional</label>
 			            </div>
 					</div>
-		              <button type='submit' id='submit' name='submit' class='btn btn-success'><span class='glyphicon glyphicon-thumbs-up'></span> Register</button>
-					  <button type='submit' class='btn btn-danger btn-default' data-dismiss='modal'><span class='glyphicon glyphicon-remove'></span> Cancel</button>
+		              <button type='submit' class='btn btn-primary'><span class='glyphicon glyphicon-thumbs-up'></span> Register</button>
+					  <button type='submit' class='btn btn-default' data-dismiss='modal'><span class='glyphicon glyphicon-remove'></span> Cancel</button>
 		          </form>
 		        </div>
 		       </div>

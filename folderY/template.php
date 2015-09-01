@@ -31,7 +31,7 @@
 <body>
   
 <div class="container-fluid">
-  	<?php headerAndSearchCode(); ?>
+  	<?php headerCode(); ?>
   
   	<?php footerCode(); ?>           
 </div>

@@ -1,7 +1,7 @@
 <?php
 
 //Code for Header and Search bar
-function headerAndSearchCode(){
+function headerCode(){
     echo "
 			<div class='row'>
     			<div class='col-sm-1' id='cssTopRightLinks'></div>
@@ -73,7 +73,7 @@ echo "
 		  <div class='modal fade' id='loginModal' role='dialog'>
 		    <div class='modal-dialog'>
 
-		    
+
 		      <!-- Modal content-->
 		      <div class='modal-content'>
 		        <div class='modal-header'>
@@ -101,10 +101,11 @@ echo "
 		          </form>
 		        </div>
 		       </div>
-		    
+
 			</div>
 		  </div>
 			";
+
 
 //Code for Registration Modal
 echo "

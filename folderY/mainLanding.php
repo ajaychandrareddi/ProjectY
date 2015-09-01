@@ -30,18 +30,15 @@
   <!-- Local Use -->
   <script type="text/javascript" src="../js/header.js"></script>
   <script type="text/javascript" src="../js/loginValidation.js"></script>
-  <script type="text/javascript" src="../js/registerValidation.js"></script>
   <link rel="stylesheet" href="../css/main.css">
   
 </head>
-<body>
-  
-<div class="container-fluid">
-  	<?php headerAndSearchCode(); ?>
-  
-  	<?php footerCode(); ?>           
-</div>
-
+<body>  
+	<div class="container-fluid">
+	  	<?php headerCode(); ?>
+	  
+	  	<?php footerCode(); ?>           
+	</div>
 </body>
 </html>
  

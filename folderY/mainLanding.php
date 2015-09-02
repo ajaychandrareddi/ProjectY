@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start();
 
 //	include("../includes/dbconnect.php");
 	include("../includes/html_codes.php");
@@ -15,7 +16,7 @@
   <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css"> 
   
   <!-- BootstrapValidator CSS -->
-  <link rel="stylesheet" href="../dist/css/bootstrapValidator.min.css">
+  <link rel="stylesheet" href="../vendor/bootstrapValidator/css/bootstrapValidator.min.css">
   
   <!-- GoogleApis Jquery -->
   <script src="../vendor/jquery/jquery.min.js"></script>
@@ -24,7 +25,7 @@
   <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
   
   <!-- BootstrapValidator JS -->
-  <script src="../dist/js/bootstrapValidator.min.js"></script>
+  <script src="../vendor/bootstrapValidator/js/bootstrapValidator.min.js"></script>
 
   
   <!-- Local Use -->

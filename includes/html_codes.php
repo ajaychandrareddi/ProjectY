@@ -117,7 +117,7 @@ echo '
 					  <h4><span class="glyphicon glyphicon-lock"></span> New Account</h4>
 					</div>
 					<div class="modal-body">
-					  <form id="registerForm" method="post" action="post.php">
+					  <form id="registerForm" role="form" method="post" action="post.php">
 					    <div class="form-group">
 					      <label for="username"><span class="glyphicon glyphicon-user"></span> Username</label>
 					      <input type="text" id="username" name="username" class="form-control" placeholder="Enter Username">
@@ -136,7 +136,7 @@ echo '
 						    </div>
 						</div>
 						<div class="form-group">
-					       <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-thumbs-up"></span> Register</button>
+					       <button type="submit" id="submit" name="submit" class="btn btn-primary"><span class="glyphicon glyphicon-thumbs-up"></span> Register</button>
 						   <button type="submit" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
 						</div>
 					  </form>
@@ -146,4 +146,5 @@ echo '
 		</div>
 		';
 }
+
 ?>

@@ -59,23 +59,12 @@ $(document).ready(function() {
 	            }
 	        }
 	    }
-	})
-	.on('success.form.bv', function(e) {
-        // Prevent submit form
+    })
+    .on('success.form.bv', function(e) {
         e.preventDefault();
         var $form     = $(e.target),
             validator = $form.data('bootstrapValidator');
-
-        var username = [validator.getFieldElements('username').val();
-        var email = [validator.getFieldElements('email').val();
-        var password = [validator.getFieldElements('password').val();
-        
-       /* $('#helloModal')
-            .find('.welcome').html('Hello ' + username).end()
-            .modal('show');
-        
-        $form
-            .bootstrapValidator('disableSubmitButtons', false)  // Enable the submit buttons
-            .bootstrapValidator('resetForm', true);             // Reset the form */
+        	$form
+        	.bootstrapValidator('disableSubmitButtons', false)
     });
 });

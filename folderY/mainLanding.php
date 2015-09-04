@@ -30,7 +30,7 @@
 	<?php loginModalCode(); ?>
 	<script src="../js/loginValidation.js"></script>
 	<?php registerModalCode(); ?>
-	<script src="../js/registerValidation.js"></script>
+  	<script src="../js/registerValidation.js"></script> 
 </body>
 </html>
  

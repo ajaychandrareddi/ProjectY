@@ -31,6 +31,10 @@ $(document).ready(function() {
 	                    regexp: /^[a-zA-Z0-9_\.]+$/,
 	                    message: 'The username can only consist of alphabetical, number, dot and underscore'
 	                },
+	                remote: {
+                        type: 'POST',
+                        url: 'register.php'
+                    },
 	                different: {
 	                    field: 'password',
 	                    message: 'The username and password cannot be the same as each other'
@@ -44,7 +48,11 @@ $(document).ready(function() {
 	                },
 	                emailAddress: {
 	                    message: 'The input is not a valid email address'
-	                }
+	                },
+	                remote: {
+                        type: 'POST',
+                        url: 'register.php'
+                    }
 	            }
 	        },
 	        password: {
@@ -60,10 +68,17 @@ $(document).ready(function() {
 	        }
 	    }
     })
+    .on('error.form.bv', function(e) {
+    	var $form     = $(e.target),
+        validator = $form.data('bootstrapValidator');
+    			$form
+    			.bootstrapValidator('disableSubmitButtons', true)
+    })
+	
     .on('success.form.bv', function(e) {
         e.preventDefault();
         var $form     = $(e.target),
-            validator = $form.data('bootstrapValidator');
+        validator = $form.data('bootstrapValidator');
         	$form
         	.bootstrapValidator('disableSubmitButtons', false)
     });

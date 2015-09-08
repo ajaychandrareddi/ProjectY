@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+
+.row{
+	clear: right;
+}
+.bg > .item1 > img {
+	position: absolute;
+    width: 100%;
+    height: 625px;
+    margin: auto;
+}
+
+.bg > .item2 > img {
+	position: absolute;
+    width: 100%;
+    height: 625px;
+    margin: auto;
+	-webkit-animation: mymove 10s infinite;
+    animation: mymove 10s infinite;
+}
+
+@-webkit-keyframes mymove {
+    50% {opacity: 0;}
+}
+
+@keyframes mymove {
+    50% {opacity: 0;}
+}

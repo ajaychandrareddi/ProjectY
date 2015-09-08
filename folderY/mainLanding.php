@@ -18,13 +18,29 @@
   
   <!-- Local Use -->
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/mainLanding.css">
   <script type="text/javascript" src="../js/header.js"></script>
  
 </head>
 <body>  
 	<div class="container-fluid">
 	  	<?php headerCode(); ?>
-	  
+
+				<div class='row'>
+					<div class='col-sm-12'>
+					    <div id="mainLandingBG">
+						    <div class="bg">
+						      <div class="item1">
+						        <img src="../images/mainLandingImg1.jpg">
+						      </div>
+						      <div class="item2">
+						        <img src="../images/mainLandingImg2.jpg">
+						      </div>
+						    </div>
+					  	</div>
+				  	</div>
+			    </div>
+  
 	  	<?php footerCode(); ?>           
 	</div>
 	<?php loginModalCode(); ?>

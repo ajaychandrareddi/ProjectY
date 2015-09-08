@@ -7,6 +7,10 @@ $(document).ready(function() {
                     .bootstrapValidator('resetForm', true);
     });
 	
+	$('#registerModal').on('hide.bs.modal', function () {
+		window.location.reload();
+	});
+	
 	$('#registerForm').bootstrapValidator({
 		message: 'This value is not valid',
 		excluded: [':disabled'],

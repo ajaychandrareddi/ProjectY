@@ -33,7 +33,7 @@ $(document).ready(function() {
 	                },
 	                remote: {
                         type: 'POST',
-                        url: 'register.php'
+                        url: '../php/bsRemote/register.php'
                     },
 	                different: {
 	                    field: 'password',
@@ -51,7 +51,7 @@ $(document).ready(function() {
 	                },
 	                remote: {
                         type: 'POST',
-                        url: 'register.php'
+                        url: '../php/bsRemote/register.php'
                     }
 	            }
 	        },
@@ -59,6 +59,10 @@ $(document).ready(function() {
 	            validators: {
 	                notEmpty: {
 	                    message: 'The password is required and cannot be empty'
+	                },
+	                stringLength: {
+	                    min: 6,
+	                    message: 'The password must be more than 6 characters long'
 	                },
 	                different: {
 	                    field: 'username',
@@ -68,18 +72,17 @@ $(document).ready(function() {
 	        }
 	    }
     })
-    .on('error.form.bv', function(e) {
-    	var $form     = $(e.target),
-        validator = $form.data('bootstrapValidator');
-    			$form
-    			.bootstrapValidator('disableSubmitButtons', true)
-    })
-	
+    .on('error.field.bv', function(e, data) {
+                console.log(data.field, data.element, '-->error');
+            })
+
     .on('success.form.bv', function(e) {
-        e.preventDefault();
-        var $form     = $(e.target),
-        validator = $form.data('bootstrapValidator');
-        	$form
-        	.bootstrapValidator('disableSubmitButtons', false)
+            e.preventDefault();
+            var $form = $(e.target);
+            var bv = $form.data('bootstrapValidator');
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+            	console.log(result);
+                
+            }, 'json');
     });
 });

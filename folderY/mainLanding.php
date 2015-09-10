@@ -2,6 +2,10 @@
 	session_start();
 	include("../includes/html_codes.php");
 	
+//	if ($_POST[province]){getplaces(1269750,'province');}
+//	if ($_POST[region]){getplaces($_POST[region],'region');}
+//	if ($_POST[city]){getplaces($_POST[city],'city');}
+	
 ?>
  
 <!DOCTYPE html>
@@ -25,70 +29,51 @@
 <body>  
 	<div class="container-fluid">
 	  	<?php headerCode(); ?>
-
+			<div class="container">
 	  			<div class='row'>
-	  				<div class='col-sm-3'></div>
-	  				<div class='col-sm-6'>
-	  				<form class="form-inline" role="form">
-  						<div class="form-group">
-			  				<div class="dropdown" id="mainLandingSearchBar">
-							  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Buy
-							  <span class="caret"></span></button>
-							  <ul class="dropdown-menu">
-							    <li><a href="#">HTML</a></li>
-							    <li><a href="#">CSS</a></li>
-							    <li><a href="#">JavaScript</a></li>
-							  </ul>
-							</div>
+	  				<div class='col-sm-2'></div>
+	  				<div class='col-sm-7'>
+	  				<form name="mainLandingSearchForm" class="form-inline" role="form" method="post">
+  						<div class="form-group" id="mainLandingSearchBar">
+						  <select class="form-control input-sm" id="leftend">
+					        <option selected>Buy</option>
+					        <option>Rent</option>
+					        <option>Recently Sold</option>
+					      </select>
 						</div>
-						<div class="form-group">
-							<div class="dropdown" id="mainLandingSearchBar">
-							  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select State
-							  <span class="caret"></span></button>
-							  <ul class="dropdown-menu">
-							    <li><a href="#">HTML</a></li>
-							    <li><a href="#">CSS</a></li>
-							    <li><a href="#">JavaScript</a></li>
-							  </ul>
-							</div>
+						<div class="form-group"  id="mainLandingSearchBar">
+						  <select class="form-control input-sm" id="sel1">
+						  	<option selected>Select State</option>
+					        <option></option>
+
+					      </select>
 						</div>
-						<div class="form-group">
-							<div class="dropdown" id="mainLandingSearchBar">
-							  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select Divison
-							  <span class="caret"></span></button>
-							  <ul class="dropdown-menu">
-							    <li><a href="#">HTML</a></li>
-							    <li><a href="#">CSS</a></li>
-							    <li><a href="#">JavaScript</a></li>
-							  </ul>
-							</div>
+						<div class="form-group" id="mainLandingSearchBar">
+						  <select class="form-control input-sm" id="sel1">
+						  	<option selected>Select Division</option>
+					        <option></option>
+					      </select>
 						</div>
-						<div class="form-group">
-							<div class="dropdown" id="mainLandingSearchBar">
-							  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select City
-							  <span class="caret"></span></button>
-							  <ul class="dropdown-menu">
-							    <li><a href="#">HTML</a></li>
-							    <li><a href="#">CSS</a></li>
-							    <li><a href="#">JavaScript</a></li>
-							  </ul>
-							</div>
+						<div class="form-group" id="mainLandingSearchBar">
+						  <select class="form-control input-sm" id="sel1">
+						  	<option selected>Select Region</option>
+					        <option></option>
+					      </select>
 						</div>
-						<div class="form-group">
-							<div id="mainLandingSearchBar">
-								<a href="#" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> Search</a>
-							</div>
+						<div class="form-group" id="mainLandingSearchBar">
+							<a href="#" class="btn btn-info input-sm" id="rightend"><span class="glyphicon glyphicon-search"></span> Search</a>
 						</div>
 					</form>
 					</div>
 					<div class='col-sm-3'></div>
 			   </div>
-					
+			</div>		
 	  	<?php footerCode(); ?>           
 	</div>
 	<?php loginModalCode(); ?>
 	<script src="../js/loginValidation.js"></script>
 	<?php registerModalCode(); ?>
-  	<script src="../js/registerValidation.js"></script> 
+  	<script src="../js/registerValidation.js"></script>
+  	<script src="../js/mainLandingSearch.js"></script>
 </body>
 </html>

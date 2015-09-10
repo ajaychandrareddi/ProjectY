@@ -26,21 +26,64 @@
 	<div class="container-fluid">
 	  	<?php headerCode(); ?>
 
-				<div class='row'>
-					<div class='col-sm-12'>
-					    <div id="mainLandingBG">
-						    <div class="bg">
-						      <div class="item1">
-						        <img src="../images/mainLandingImg1.jpg">
-						      </div>
-						      <div class="item2">
-						        <img src="../images/mainLandingImg2.jpg">
-						      </div>
-						    </div>
-					  	</div>
-				  	</div>
-			    </div>
-  
+	  			<div class='row'>
+	  				<div class='col-sm-3'></div>
+	  				<div class='col-sm-6'>
+	  				<form class="form-inline" role="form">
+  						<div class="form-group">
+			  				<div class="dropdown" id="mainLandingSearchBar">
+							  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Buy
+							  <span class="caret"></span></button>
+							  <ul class="dropdown-menu">
+							    <li><a href="#">HTML</a></li>
+							    <li><a href="#">CSS</a></li>
+							    <li><a href="#">JavaScript</a></li>
+							  </ul>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="dropdown" id="mainLandingSearchBar">
+							  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select State
+							  <span class="caret"></span></button>
+							  <ul class="dropdown-menu">
+							    <li><a href="#">HTML</a></li>
+							    <li><a href="#">CSS</a></li>
+							    <li><a href="#">JavaScript</a></li>
+							  </ul>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="dropdown" id="mainLandingSearchBar">
+							  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select Divison
+							  <span class="caret"></span></button>
+							  <ul class="dropdown-menu">
+							    <li><a href="#">HTML</a></li>
+							    <li><a href="#">CSS</a></li>
+							    <li><a href="#">JavaScript</a></li>
+							  </ul>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="dropdown" id="mainLandingSearchBar">
+							  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select City
+							  <span class="caret"></span></button>
+							  <ul class="dropdown-menu">
+							    <li><a href="#">HTML</a></li>
+							    <li><a href="#">CSS</a></li>
+							    <li><a href="#">JavaScript</a></li>
+							  </ul>
+							</div>
+						</div>
+						<div class="form-group">
+							<div id="mainLandingSearchBar">
+								<a href="#" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> Search</a>
+							</div>
+						</div>
+					</form>
+					</div>
+					<div class='col-sm-3'></div>
+			   </div>
+					
 	  	<?php footerCode(); ?>           
 	</div>
 	<?php loginModalCode(); ?>
@@ -49,4 +92,3 @@
   	<script src="../js/registerValidation.js"></script> 
 </body>
 </html>
- 

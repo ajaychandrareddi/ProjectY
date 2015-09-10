@@ -1,5 +1,16 @@
 @CHARSET "ISO-8859-1";
 
+#mainLandingSearchBar{
+	display: inline-block;
+	margin: 200px -4px 380px 0px;
+}
+
+.btn{
+	border-radius: 0px;
+  	-moz-border-radius: 0px;
+  	-webkit-border-radius: 0px;
+}
+
 .row{
 	clear: right;
 }

@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	$('#mainLandingSearchForm').bootstrapValidator({
-		exclude: [':disabled'],
 		feedbackIcons: {
 	        valid: 'glyphicon glyphicon-ok',
 	        invalid: 'glyphicon glyphicon-remove',
@@ -15,6 +14,7 @@ $(document).ready(function() {
                 }
             },
             region: {
+            	enabled: false,
             	validators: {
                     notEmpty: {
                         message: 'The division is required and can\'t be empty'
@@ -22,6 +22,7 @@ $(document).ready(function() {
                 }
             },
             city: {
+            	enabled: false,
                 validators: {
                     notEmpty: {
                         message: 'The city is required and can\'t be empty'

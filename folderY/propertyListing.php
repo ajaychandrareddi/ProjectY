@@ -1,12 +1,13 @@
 <?php
 	session_start();
-	include("../includes/html_codes.php");	
+	include("../includes/html_codes.php");
+
 ?>
  
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MainLanding</title>
+  <title>ListAndMapResults</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
@@ -19,7 +20,7 @@
   
   <!-- Local Use -->
   <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/mainLanding.css">
+  <link rel="stylesheet" href="../css/propertyListing.css">
   <script type="text/javascript" src="../js/header.js"></script>
  
 </head>
@@ -28,8 +29,8 @@
 	  	<?php headerCode(); ?>
 					<div>
 			  			  <div class='row'>
-			  				<div class='col-sm-2'></div>
-			  				<div class='col-sm-9'>
+			  				<div class='col-sm-1'></div>
+			  				<div class='col-sm-8'>
 			  				<form name="mainLandingSearchForm" class="form-inline" role="form" method="post" action="testing.php">
 		  						<div class="form-group" id="mainLandingSearchBar">
 								  <select class="form-control input-sm" name="todo" id="leftend">
@@ -58,7 +59,7 @@
 								</div>
 							</form>
 							</div>
-							<div class='col-sm-1'></div>
+							<div class='col-sm-3'></div>
 					   </div>
 				</div>		
 	  	<?php footerCode(); ?>           
@@ -120,7 +121,7 @@
 	            }
 	        ?>
 	    };
-</script>
-<script src="../js/mainLanding.js"></script>
+	</script>
+	<script src="../js/mainLanding.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ function headerCode(){
     					<img src=\"C:/xampp/htdocs/ProjectX/images/home.png\">
     				</div>
     			</div>
-	  			<div class='col-sm-6'>
+	  			<div class='col-sm-7'>
     				<div class='btn-group btn-group-lg' id='cssMenu'>
 	    				<a href='#' class='btn btn-primary' id='buyDataToggle' data-trigger='hover' data-placement='bottom'>Buy</a>
     						<div id='buyPopoverContent' class='hide'>
@@ -42,7 +42,7 @@ function headerCode(){
     		";
     		topRightLinks();
 			echo "</div>
-				<div class='col-sm-2' id='cssTopRightLinks'></div>
+				<div class='col-sm-1' id='cssTopRightLinks'></div>
 			  </div>
     		";
 }

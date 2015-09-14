@@ -1,11 +1,6 @@
 <?php
 	session_start();
-	include("../includes/html_codes.php");
-	
-//	if ($_POST[province]){getplaces(1269750,'province');}
-//	if ($_POST[region]){getplaces($_POST[region],'region');}
-//	if ($_POST[city]){getplaces($_POST[city],'city');}
-	
+	include("../includes/html_codes.php");	
 ?>
  
 <!DOCTYPE html>
@@ -13,6 +8,7 @@
 <head>
   <title>Template</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../vendor/bootstrapValidator/css/bootstrapValidator.min.css">
   <script src="../vendor/jquery/jquery.min.js"></script>
@@ -28,50 +24,49 @@
  
 </head>
 <body>  
-	<div class="container-fluid">
+	<div class="container">
 	  	<?php headerCode(); ?>
-					<div class="container">
-			  			<div class='row'>
+					<div>
+			  			  <div class='row'>
 			  				<div class='col-sm-2'></div>
-			  				<div class='col-sm-7'>
-			  				<form name="mainLandingSearchForm" class="form-inline" role="form" method="post">
+			  				<div class='col-sm-8'>
+			  				<form name="mainLandingSearchForm" class="form-inline" role="form" method="post" action="testing.php">
 		  						<div class="form-group" id="mainLandingSearchBar">
-								  <select class="form-control input-sm" id="leftend">
-							        <option selected>Buy</option>
-							        <option>Rent</option>
-							        <option>Recently Sold</option>
+								  <select class="form-control input-sm" name="todo" id="leftend">
+							        <option value="1" selected>Buy</option>
+							        <option value="2" >Rent</option>
+							        <option value="3" >Recently Sold</option>
 							      </select>
 								</div>
 								<div class="form-group"  id="mainLandingSearchBar">
 								  <select class="form-control input-sm" name="province" id="province" onchange="getplaces(this.value,'region');">
-								  	<option selected>Select State</option>
+								  	<option value="<?=$_POST['province']?>"></option>
 							      </select>
 								</div>
 								<div class="form-group" id="mainLandingSearchBar">
 								  <select class="form-control input-sm" name="region" id="region" onchange="getplaces(this.value,'city');">
-								  	<option selected>Select Division</option>
+								  	<option selected value="<?=$_POST['region']?>">-- Select Division --</option>
 							      </select>
 								</div>
 								<div class="form-group" id="mainLandingSearchBar">
 								  <select class="form-control input-sm" name="city" id="city">
-								  	<option selected>Select Region</option>
+								  	<option selected value="<?=$_POST['city']?>">-- Select City --</option>
 							      </select>
 								</div>
 								<div class="form-group" id="mainLandingSearchBar">
-									<a href="#" class="btn btn-info input-sm" id="rightend"><span class="glyphicon glyphicon-search"></span> Search</a>
+									<button class="btn btn-info input-sm" id="rightend"><span class="glyphicon glyphicon-search"></span> Search</button>
 								</div>
 							</form>
 							</div>
-							<div class='col-sm-3'></div>
+							<div class='col-sm-2'></div>
 					   </div>
-					</div>		
+				</div>		
 	  	<?php footerCode(); ?>           
 	</div>
 	<?php loginModalCode(); ?>
 	<script src="../js/loginValidation.js"></script>
 	<?php registerModalCode(); ?>
   	<script src="../js/registerValidation.js"></script>
-  	
   	<script>
 	    var whos=null;
 	    function getplaces(gid,src)
@@ -90,7 +85,13 @@
 	    	who.options.length = 0;
 	    	
 	    	if(counts) {
-		    	who.options[who.options.length] = new Option('Select','')
+	    		if (whos=='province'){
+		    		who.options[who.options.length] = new Option('-- Select State --','')
+	    		} else if (whos=='region'){
+	    			who.options[who.options.length] = new Option('-- Select Division --','')
+	    		} else {
+	    			who.options[who.options.length] = new Option('-- Select City --','')
+	    		}		    		
 	    	} else {
 		    	who.options[who.options.length] = new Option('No Data Available','NULL')
 	    	}
@@ -121,5 +122,6 @@
 	        ?>
 	    };
 </script>
+<script src="../js/mainLanding.js"></script>
 </body>
 </html>

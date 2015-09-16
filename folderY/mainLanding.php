@@ -30,7 +30,7 @@
 			  			  <div class='row'>
 			  				<div class='col-sm-2'></div>
 			  				<div class='col-sm-9'>
-			  				<form name="mainLandingSearchForm" class="form-inline" role="form" method="post" action="testing.php">
+			  				<form name="mainLandingSearchForm" class="form-inline" role="form" method="post" action="propertyListing.php">
 		  						<div class="form-group" id="mainLandingSearchBar">
 								  <select class="form-control input-sm" name="todo" id="leftend">
 							        <option value="1" selected>Buy</option>

@@ -2,7 +2,7 @@
 
 #mainLandingSearchBar{
 	display: inline-block;
-	margin: 20px -4px 380px 0px;
+	margin: 20px -4px 20px 0px;
 }
 
 .form-group select,
@@ -55,4 +55,8 @@
 
 @keyframes mymove {
     50% {opacity: 0;}
+}
+
+.well{
+	margin: 10px 0px 10px 0px;
 }

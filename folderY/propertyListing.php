@@ -124,9 +124,13 @@
 	    	}
 	    		
 	    	for(var i=0;i<counts;i++){
-	    		who.options[who.options.length] = new Option(jData.geonames[i].name,jData.geonames[i].geonameId)}
-
-	    	who.options[0] = new Option(jData.geonames[i].name,jData.geonames[i].geonameId, false, true)
+		    	
+				if (jData.geonames[i].geonameId == <?=$_POST['province']?>){
+	    		who.options[who.options.length] = new Option(jData.geonames[i].name,jData.geonames[i].geonameId, false, true)
+				} else {
+	    		who.options[who.options.length] = new Option(jData.geonames[i].name,jData.geonames[i].geonameId)
+	    		}
+	    	}
 	    	
 	    	delete jData;
 	    	jData = null;

@@ -16,12 +16,14 @@
   <script src="../vendor/geonames/js/jsr_class.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="../vendor/bootstrapValidator/js/bootstrapValidator.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
   
   <!-- Local Use -->
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/propertyListing.css">
   <script type="text/javascript" src="../js/header.js"></script>
+  <script type="text/javascript" src="../js/loadMap.js"></script>
  
 </head>
 <body>  
@@ -64,26 +66,25 @@
   				<div class='col-sm-10'>
 					<ul class="nav nav-tabs">
 					  <li class="active"><a data-toggle="tab" href="#list">LIST</a></li>
-					  <li><a data-toggle="tab" href="#map">MAP</a></li>
+					  <li><a data-toggle="tab" href="#showmap" onclick="load()">MAP</a></li>
 					</ul>
 					
 					<div class="tab-content">
 						 <div id="list" class="tab-pane fade in active">
 						   <div class="well well-lg">Large Well</div>
+						 	<div class='row'>
+			  					<div class='col-sm-10'>
+									<ul class="pager">
+										 <li><a href="#">Previous</a></li>
+										 <li><a href="#">Next</a></li>
+									</ul>
+								</div>
+								<div class='col-sm-1'></div>
+							</div>	
 						 </div>
-						 <div id="map" class="tab-pane fade">
-						   <h3>MAP</h3>
-						   <p>Some content in menu 1.</p>
+						 <div id="showmap" class="tab-pane fade">
+						 	<div id="map" style="width: 1000px; height: 800px"></div>
 						 </div>
-					</div>
-					<div class='row'>
-	  					<div class='col-sm-10'>
-							<ul class="pager">
-								 <li><a href="#">Previous</a></li>
-								 <li><a href="#">Next</a></li>
-							</ul>
-						</div>
-						<div class='col-sm-1'></div>
 					</div>
 				</div>
 			</div>	
@@ -116,22 +117,15 @@
 		    		who.options[who.options.length] = new Option('-- Select State --','')
 	    		} else if (whos=='region'){
 	    			who.options[who.options.length] = new Option('-- Select Division --','')
-	    		} else {
+	    		} else if (whos=='city'){
 	    			who.options[who.options.length] = new Option('-- Select City --','')
 	    		}		    		
 	    	} else {
 		    	who.options[who.options.length] = new Option('No Data Available','NULL')
 	    	}
-	    		
-	    	for(var i=0;i<counts;i++){
-		    	
-				if (jData.geonames[i].geonameId == <?=$_POST['province']?>){
-	    		who.options[who.options.length] = new Option(jData.geonames[i].name,jData.geonames[i].geonameId, false, true)
-				} else {
-	    		who.options[who.options.length] = new Option(jData.geonames[i].name,jData.geonames[i].geonameId)
-	    		}
-	    	}
-	    	
+
+	    	for(var i=0;i<counts;i++){who.options[who.options.length] = new Option(jData.geonames[i].name,jData.geonames[i].geonameId)}
+    	
 	    	delete jData;
 	    	jData = null;
 		
@@ -140,8 +134,8 @@
 	    window.onload = function() {
 	        <?php  
 	                echo 'getplaces(1269750,\'province\');'."\n";
+	            
 	        ?>
-  
 	    };
 	</script>
 	<script src="../js/mainLanding.js"></script>

@@ -20,6 +20,7 @@
   <!-- Local Use -->
   <link rel="stylesheet" href="../css/main.css">
   <script type="text/javascript" src="../js/header.js"></script>
+  <script type="text/javascript" src="../js/rentalProperty.js"></script>
  
 </head>
 <body>  
@@ -289,11 +290,7 @@
 									</div>
 								</div>
 								<h3>Unit Features</h3>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<label for="petpolicy">Rooms:</label>
-									</div>
-								</div>
+								<label for="rooms">Rooms:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Living Room</label>
@@ -302,51 +299,367 @@
 										<label class="checkbox-inline"><input type="checkbox" value="">Dining Room</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Family Room</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Family Room or Den</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Guest Room</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Waiting or Front Room</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Recreation Room</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Mult-Purpose Hall</label>
 									</div>
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Pooja Room</label>
 									</div>
 								</div>
+								<div class="collapse">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Dress Room</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Laundary Room</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Utility Room</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Kitchen</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Office or Study Room</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Sun Room or Sit Out</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Walk-in Closet</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Pantry</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Foyer</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Lounge</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Solarium or Atrium</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Basement</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Bar</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Store Room</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Maid's Room</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<a href="#" class="more" data-alt="- Hide" data-start="+ Show"><span>+ Show</span> All Rooms</a>
+								</div>
+								<label for="petpolicy">Exterior:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Library</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Private Pool</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Office</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Verandah</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Storage Space</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Balcony, Deck or Patio</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Kitchen</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Open Terrace</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Pantry</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Yard</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Garage</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Lawn</label>
+									</div>
+								</div>
+								<div class="collapse">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Pond</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Lake</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Porch</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Garden</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Sprinkler System</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Greenhouse</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<a href="#" class="more" data-alt="- Hide" data-start="+ Show"><span>+ Show</span> All Exteriors</a>
+								</div>
+								<label for="petpolicy">Appliances:</label>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Range or Oven</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Refrigerator</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Dishwasher</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Waiting Room</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Microwave</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Study Room</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Garbage disposal</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Maid's Room</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Stainless Steel Appliances</label>
+									</div>
+								</div>
+								<div class="collapse">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Freezer</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Trash compactor</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<a href="#" class="more" data-alt="- Hide" data-start="+ Show"><span>+ Show</span> All Appliances</a>
+								</div>
+								<label for="petpolicy">Cooling & Heating:</label>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Central A/C</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Air Conditioning</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Ceiling fans</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Heat: forced air</label>
+									</div>
+								</div>
+								<label for="petpolicy">Wiring:</label>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Cable-ready</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">High-speed Internet</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Wired</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Intercom system</label>
+									</div>
+								</div>
+								<label for="petpolicy">Additional Features:</label>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Tile floor</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Marble floor</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Hardwood floor</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Fireplace</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">High/Vaulted Cealing</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Granite Countertop</label>
+									</div>
+								</div>
+								<h3>Community Features</h3>
+								<label for="petpolicy">Building Type:</label>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">New Property</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Waterfront</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Vintage Building</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Loft Layout</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Assisted Living</label>
+									</div>
+								</div>
+								<label for="petpolicy">Security & Access:</label>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Elevator</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Secured Entry</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Controlled Access</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Gated Entry</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Security System</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Doorman</label>
+									</div>
+								</div>
+								<div class="collapse">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Disability Access</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<a href="#" class="more" data-alt="- Hide" data-start="+ Show"><span>+ Show</span> All Security & Access</a>
+								</div>
+								<label for="petpolicy">Facilities & Recreation:</label>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Shared Pool</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Fitness Center</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Clubhouse</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Squash Court</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Table Tennis</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Indoor Badminton</label>
+									</div>
+								</div>
+								<div class="collapse">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Children Play Area</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Tennis Court</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Golf Course</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Library</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Business Center</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Billiards Room</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Near Transportation</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Spa & Saloon</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Barbecue</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<a href="#" class="more" data-alt="- Hide" data-start="+ Show"><span>+ Show</span> All Facilities & Recreation</a>
+								</div>
+								<label for="petpolicy">Communal Parking:</label>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Guest Parking</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Off-Street Parking</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Covered Parking</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">On-Street Parking</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Garage - Attached</label>
+									</div>
+									<div class="col-sm-4">
+										<label class="checkbox-inline"><input type="checkbox" value="">Garage - Detached</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-9">
+										<ul class="pager">
+										  <li><a href="#">Previous</a></li>
+										  <li><a href="#">Next</a></li>
+										</ul>
 									</div>
 								</div>
 							</div>

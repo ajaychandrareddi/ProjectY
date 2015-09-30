@@ -28,7 +28,7 @@
 	  	<?php headerCode(); ?>
 	  		<div class='row'>
 	  				<div class='col-sm-1'></div>
-  					<div class='col-sm-8'>
+  					<div class='col-sm-9'>
 			  			<ul class="nav nav-tabs">
 					  	<li class="active"><a data-toggle="tab" href="#location">Location</a></li>
 					  	<li><a data-toggle="tab" href="#contactInfo">Contact Info</a></li>
@@ -313,7 +313,7 @@
 										<label class="checkbox-inline"><input type="checkbox" value="">Pooja Room</label>
 									</div>
 								</div>
-								<div class="collapse">
+								<div id="collapseRooms" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
 											<label class="checkbox-inline"><input type="checkbox" value="">Dress Room</label>
@@ -371,7 +371,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<a href="#" class="more" data-alt="- Hide" data-start="+ Show"><span>+ Show</span> All Rooms</a>
+									<a id="moreRooms" class="accordion-toggle" data-toggle="collapse" href="#collapseRooms"><span>+ Show</span> All Rooms</a>
 								</div>
 								<label for="petpolicy">Exterior:</label>
 								<div class="form-group">
@@ -396,7 +396,7 @@
 										<label class="checkbox-inline"><input type="checkbox" value="">Lawn</label>
 									</div>
 								</div>
-								<div class="collapse">
+								<div id="collapseExteriors" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
 											<label class="checkbox-inline"><input type="checkbox" value="">Pond</label>
@@ -421,7 +421,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<a href="#" class="more" data-alt="- Hide" data-start="+ Show"><span>+ Show</span> All Exteriors</a>
+									<a id="moreExterirors" class="accordion-toggle" data-toggle="collapse" href="#collapseExteriors"><span>+ Show</span> All Exteriors</a>
 								</div>
 								<label for="petpolicy">Appliances:</label>
 								<div class="form-group">
@@ -446,7 +446,7 @@
 										<label class="checkbox-inline"><input type="checkbox" value="">Stainless Steel Appliances</label>
 									</div>
 								</div>
-								<div class="collapse">
+								<div id="collapseAppliances" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
 											<label class="checkbox-inline"><input type="checkbox" value="">Freezer</label>
@@ -457,9 +457,9 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<a href="#" class="more" data-alt="- Hide" data-start="+ Show"><span>+ Show</span> All Appliances</a>
+									<a id="moreAppliances" class="accordion-toggle" data-toggle="collapse" href="#collapseAppliances"><span>+ Show</span> All Appliances</a>
 								</div>
-								<label for="petpolicy">Cooling & Heating:</label>
+								<label for="petpolicy">Cooling &amp; Heating:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Central A/C</label>
@@ -537,7 +537,7 @@
 										<label class="checkbox-inline"><input type="checkbox" value="">Assisted Living</label>
 									</div>
 								</div>
-								<label for="petpolicy">Security & Access:</label>
+								<label for="petpolicy">Security &amp; Access:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Elevator</label>
@@ -560,7 +560,7 @@
 										<label class="checkbox-inline"><input type="checkbox" value="">Doorman</label>
 									</div>
 								</div>
-								<div class="collapse">
+								<div id="collapseSnR" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
 											<label class="checkbox-inline"><input type="checkbox" value="">Disability Access</label>
@@ -568,9 +568,9 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<a href="#" class="more" data-alt="- Hide" data-start="+ Show"><span>+ Show</span> All Security & Access</a>
+									<a id="moreSnR" class="accordion-toggle" data-toggle="collapse" href="#collapseSnR"><span>+ Show</span> All Security &amp; Access</a>
 								</div>
-								<label for="petpolicy">Facilities & Recreation:</label>
+								<label for="petpolicy">Facilities &amp; Recreation:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Shared Pool</label>
@@ -593,7 +593,7 @@
 										<label class="checkbox-inline"><input type="checkbox" value="">Indoor Badminton</label>
 									</div>
 								</div>
-								<div class="collapse">
+								<div id="collapseFnR" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
 											<label class="checkbox-inline"><input type="checkbox" value="">Children Play Area</label>
@@ -621,7 +621,7 @@
 											<label class="checkbox-inline"><input type="checkbox" value="">Near Transportation</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Spa & Saloon</label>
+											<label class="checkbox-inline"><input type="checkbox" value="">Spa &amp; Saloon</label>
 										</div>
 										<div class="col-sm-4">
 											<label class="checkbox-inline"><input type="checkbox" value="">Barbecue</label>
@@ -629,7 +629,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<a href="#" class="more" data-alt="- Hide" data-start="+ Show"><span>+ Show</span> All Facilities & Recreation</a>
+									<a id="moreFnR" class="accordion-toggle" data-toggle="collapse" href="#collapseFnR"><span>+ Show</span> All Facilities &amp; Recreation</a>
 								</div>
 								<label for="petpolicy">Communal Parking:</label>
 								<div class="form-group">
@@ -663,14 +663,18 @@
 									</div>
 								</div>
 							</div>
+							<div id="review" class="tab-pane fade">
+							    <h3>Review</h3>
+							    <p>Some content in menu 2.</p>
+							</div>
 							<div id="listingStatus" class="tab-pane fade">
 							    <h3>Listing Status</h3>
 							    <p>Some content in menu 2.</p>
 							</div>
-							<div class='col-sm-3'></div>
 						</div>
 					</form>	
 				</div>
+					<div class='col-sm-2'></div>
 			</div>
 	  	<?php footerCode(); ?>           
 	</div>

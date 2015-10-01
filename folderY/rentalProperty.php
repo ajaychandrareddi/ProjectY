@@ -7,21 +7,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Template</title>
+  <title>Rental Property</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../vendor/bootstrapValidator/css/bootstrapValidator.min.css">
-  <script src="../vendor/jquery/jquery.min.js"></script>
+  <link rel="stylesheet" href="../vendor/jquery/css/style.css">
+  <link rel="stylesheet" href="../vendor/jquery/css/jquery.fileupload.css">
+  <script src="../vendor/jquery/js/jquery.min.js"></script>
+  
+  <script src="../vendor/jquery/js/jquery.ui.widget.js"></script>
+  <script src="../vendor/blueimp/js/load-image.all.min.js"></script>
+  <script src="../vendor/blueimp/js/canvas-to-blob.min.js"></script>
+  <script src="../vendor/jquery/js/jquery.iframe-transport.js"></script>
+  <script src="../vendor/jquery/js/jquery.fileupload.js"></script>
+  <script src="../vendor/jquery/js/jquery.fileupload-process.js"></script>
+  <script src="../vendor/jquery/js/jquery.fileupload-image.js"></script>
+  <script src="../vendor/jquery/js/jquery.fileupload-audio.js"></script>
+  <script src="../vendor/jquery/js/jquery.fileupload-video.js"></script>
+  <script src="../vendor/jquery/js/jquery.fileupload-validate.js"></script>
+  
+  <script src="../vendor/geonames/js/jsr_class.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="../vendor/bootstrapValidator/js/bootstrapValidator.min.js"></script>
-
   
   <!-- Local Use -->
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/rentalProperty.css">
   <script type="text/javascript" src="../js/header.js"></script>
   <script type="text/javascript" src="../js/rentalProperty.js"></script>
- 
+
 </head>
 <body>  
 	<div class="container">
@@ -267,7 +282,26 @@
 							</div>
 							<div id="photosMedia" class="tab-pane fade">
 							    <h3>Photos &amp; Media</h3>
-							    <p>Some content in menu 2.</p>
+							    <label for="photos">Photos:</label>
+							    <div class="form-group">
+									<div class="col-sm-9">
+										<span class="glyphicon glyphicon-cloud-upload"></span>
+										    <span class="btn btn-success fileinput-button">
+										        <i class="glyphicon glyphicon-plus"></i>
+										        <span>Add files...</span>
+										        <!-- The file input field used as target for the file upload widget -->
+										        <input id="fileupload" type="file" name="files[]" multiple>
+										    </span>
+										    <br>
+										    <br>
+										    <!-- The global progress bar -->
+										    <div id="progress" class="progress">
+										        <div class="progress-bar progress-bar-success"></div>
+										    </div>
+										    <!-- The container for the uploaded files -->
+										    <div id="files" class="files"></div>
+									</div>
+								</div>
 							</div>
 							<div id="description" class="tab-pane fade">
 							    <h3>Description</h3>

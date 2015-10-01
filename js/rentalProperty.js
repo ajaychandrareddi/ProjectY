@@ -33,4 +33,5 @@ $(document).ready(function(){
 	$("#collapseFnR").on("show.bs.collapse", function(){
 		$("#moreFnR").html('- Hide All Facilities & Recreation');
 	});
+
 });

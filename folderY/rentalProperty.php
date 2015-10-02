@@ -12,13 +12,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../vendor/bootstrapValidator/css/bootstrapValidator.min.css">
-  <link rel="stylesheet" href="../vendor/jquery/css/style.css">
+  <link rel="stylesheet" href="../vendor/blueimp/css/blueimp-gallery.min.css">
   <link rel="stylesheet" href="../vendor/jquery/css/jquery.fileupload.css">
-  <script src="../vendor/jquery/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="../vendor/jquery/css/jquery.fileupload-ui.css">
+  <script src="../vendor/jquery/js/jquery.min.js"></script> 
   
-  <script src="../vendor/jquery/js/jquery.ui.widget.js"></script>
+ <!--   <script src="../vendor/jquery/js/jquery.ui.widget.js"></script>
+  <script src="../vendor/blueimp/js/tmpl.min.js"></script>
   <script src="../vendor/blueimp/js/load-image.all.min.js"></script>
   <script src="../vendor/blueimp/js/canvas-to-blob.min.js"></script>
+  <script src="../vendor/blueimp/js/jquery.blueimp-gallery.min.js"></script>
   <script src="../vendor/jquery/js/jquery.iframe-transport.js"></script>
   <script src="../vendor/jquery/js/jquery.fileupload.js"></script>
   <script src="../vendor/jquery/js/jquery.fileupload-process.js"></script>
@@ -26,6 +29,7 @@
   <script src="../vendor/jquery/js/jquery.fileupload-audio.js"></script>
   <script src="../vendor/jquery/js/jquery.fileupload-video.js"></script>
   <script src="../vendor/jquery/js/jquery.fileupload-validate.js"></script>
+  <script src="../vendor/jquery/js/main.js"></script> -->
   
   <script src="../vendor/geonames/js/jsr_class.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -284,22 +288,22 @@
 							    <h3>Photos &amp; Media</h3>
 							    <label for="photos">Photos:</label>
 							    <div class="form-group">
-									<div class="col-sm-9">
-										<span class="glyphicon glyphicon-cloud-upload"></span>
-										    <span class="btn btn-success fileinput-button">
-										        <i class="glyphicon glyphicon-plus"></i>
-										        <span>Add files...</span>
-										        <!-- The file input field used as target for the file upload widget -->
-										        <input id="fileupload" type="file" name="files[]" multiple>
+							    	<div  class="col-sm-12">
+								        <h5>You can upload unlimited number of photos. 
+								        Choose the image files you want by clicking on the button below. 
+								        If you prefer, you may also drag your photos onto the dropzone below..
+								        </h5>
+							        </div>
+							        <div  class="col-sm-12">
+										<div class="jumbotron" id="photosDropZone">
+											<span class="glyphicon glyphicon-cloud-upload"></span>
+											<h4>Drag &amp; Drop to Upload Photos or</h4>
+										    <span class="btn btn-default fileinput-button">
+										        <i class="glyphicon glyphicon-upload"></i>
+										        <span>Select files...</span>
+										        <input type="file" name="files[]" multiple>
 										    </span>
-										    <br>
-										    <br>
-										    <!-- The global progress bar -->
-										    <div id="progress" class="progress">
-										        <div class="progress-bar progress-bar-success"></div>
-										    </div>
-										    <!-- The container for the uploaded files -->
-										    <div id="files" class="files"></div>
+									    </div>
 									</div>
 								</div>
 							</div>
@@ -717,13 +721,5 @@
 	<?php registerModalCode(); ?>
   	<script src="../js/registerValidation.js"></script>
   	<script src="../js/geonames.js"></script>
-  	<script>
-	  	window.onload = function() {
-	        <?php  
-	                echo 'getplaces(1269750,\'province\');'."\n";
-	            
-	        ?>
-	    };
-  	</script>
 </body>
 </html>

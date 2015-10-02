@@ -3,3 +3,14 @@
 .nav{
 	margin: 20px 0px 0px 0px;
 }
+
+.glyphicon-cloud-upload{
+	font-size: 40px;
+	color: #00AFFF;
+}
+
+#photosDropZone{
+	border-style: dashed solid;
+	border-color: #A0A0A0;
+	text-align: center;
+}

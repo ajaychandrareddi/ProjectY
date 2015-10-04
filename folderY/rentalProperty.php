@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../vendor/jquery/css/jquery.fileupload-ui.css">
   <script src="../vendor/jquery/js/jquery.min.js"></script> 
   
- <!--   <script src="../vendor/jquery/js/jquery.ui.widget.js"></script>
+  <script src="../vendor/jquery/js/jquery.ui.widget.js"></script>
   <script src="../vendor/blueimp/js/tmpl.min.js"></script>
   <script src="../vendor/blueimp/js/load-image.all.min.js"></script>
   <script src="../vendor/blueimp/js/canvas-to-blob.min.js"></script>
@@ -29,7 +29,8 @@
   <script src="../vendor/jquery/js/jquery.fileupload-audio.js"></script>
   <script src="../vendor/jquery/js/jquery.fileupload-video.js"></script>
   <script src="../vendor/jquery/js/jquery.fileupload-validate.js"></script>
-  <script src="../vendor/jquery/js/main.js"></script> -->
+  <script src="../vendor/jquery/js/jquery.fileupload-ui.js"></script>
+  <script src="../vendor/jquery/js/main.js"></script> 
   
   <script src="../vendor/geonames/js/jsr_class.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -294,16 +295,29 @@
 								        If you prefer, you may also drag your photos onto the dropzone below..
 								        </h5>
 							        </div>
-							        <div  class="col-sm-12">
-										<div class="jumbotron" id="photosDropZone">
-											<span class="glyphicon glyphicon-cloud-upload"></span>
-											<h4>Drag &amp; Drop to Upload Photos or</h4>
-										    <span class="btn btn-default fileinput-button">
-										        <i class="glyphicon glyphicon-upload"></i>
-										        <span>Select files...</span>
-										        <input type="file" name="files[]" multiple>
-										    </span>
-									    </div>
+							        <div id="fileupload">
+								        <div class="col-sm-12">
+											<div class="jumbotron" id="photosDropZone">
+													<span class="glyphicon glyphicon-cloud-upload"></span>
+													<h4>Drag &amp; Drop to Upload Photos or</h4>
+												    <span class="btn btn-default fileinput-button">
+												        <i class="glyphicon glyphicon-upload"></i>
+												        <span>Select files...</span>
+												        <input type="file" name="files[]" multiple accept='.jpg,.jpeg,.pjpeg,.gif,.png'>
+												    </span>
+										    </div>
+										</div>
+										<div class="col-sm-12">
+											<div class="col-lg-5 fileupload-progress fade">
+								                <!-- The global progress bar -->
+								                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+								                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+								                </div>
+								                <!-- The extended global progress state -->
+								                <div class="progress-extended">&nbsp;</div>
+								            </div>
+											<table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -721,5 +735,71 @@
 	<?php registerModalCode(); ?>
   	<script src="../js/registerValidation.js"></script>
   	<script src="../js/geonames.js"></script>
+	<script id="template-upload" type="text/x-tmpl">
+		{% for (var i=0, file; file=o.files[i]; i++) { %}
+    		<div class="row well well-sm">
+        		<div class='col-sm-2'>
+            		<span class="preview"></span>
+        		</div>
+				<div class='col-sm-5'>
+					<input type="text" class="form-control" id="photoCaption" placeholder="Photo Caption">
+        		</div>
+				<div class='col-sm-2'>
+            		<p class="name">{%=file.name%}</p>
+            		<strong class="error text-danger"></strong>
+        		</div>
+        		<div class='col-sm-1'>
+            		{% if (!i) { %}
+                		<button class="btn btn-warning cancel">
+                    		<i class="glyphicon glyphicon-trash"></i>
+                		</button>
+            		{% } %}
+        		</div>
+    		</div>
+		{% } %}
+	</script>
+
+	<script id="template-download" type="text/x-tmpl">
+		{% for (var i=0, file; file=o.files[i]; i++) { %}
+    		<tr class="template-download fade">
+        		<td>
+            		<span class="preview">
+                		{% if (file.thumbnailUrl) { %}
+                    		<a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+                		{% } %}
+            		</span>
+        		</td>
+        		<td>
+            		<p class="name">
+                		{% if (file.url) { %}
+                    		<a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                		{% } else { %}
+                    		<span>{%=file.name%}</span>
+                		{% } %}
+            		</p>
+            		{% if (file.error) { %}
+                		<div><span class="label label-danger">Error</span> {%=file.error%}</div>
+            		{% } %}
+        		</td>
+        		<td>
+            		<span class="size">{%=o.formatFileSize(file.size)%}</span>
+        		</td>
+        		<td>
+            		{% if (file.deleteUrl) { %}
+                		<button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                    		<i class="glyphicon glyphicon-trash"></i>
+                    		<span>Delete</span>
+                		</button>
+                		<input type="checkbox" name="delete" value="1" class="toggle">
+            		{% } else { %}
+                		<button class="btn btn-warning cancel">
+                    		<i class="glyphicon glyphicon-ban-circle"></i>
+                    		<span>Cancel</span>
+                		</button>
+            		{% } %}
+        		</td>
+    		</tr>
+		{% } %}
+	</script>	
 </body>
 </html>

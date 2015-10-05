@@ -15,32 +15,10 @@
   <link rel="stylesheet" href="../vendor/blueimp/css/blueimp-gallery.min.css">
   <link rel="stylesheet" href="../vendor/jquery/css/jquery.fileupload.css">
   <link rel="stylesheet" href="../vendor/jquery/css/jquery.fileupload-ui.css">
-  <script src="../vendor/jquery/js/jquery.min.js"></script> 
-  
-  <script src="../vendor/jquery/js/jquery.ui.widget.js"></script>
-  <script src="../vendor/blueimp/js/tmpl.min.js"></script>
-  <script src="../vendor/blueimp/js/load-image.all.min.js"></script>
-  <script src="../vendor/blueimp/js/canvas-to-blob.min.js"></script>
-  <script src="../vendor/blueimp/js/jquery.blueimp-gallery.min.js"></script>
-  <script src="../vendor/jquery/js/jquery.iframe-transport.js"></script>
-  <script src="../vendor/jquery/js/jquery.fileupload.js"></script>
-  <script src="../vendor/jquery/js/jquery.fileupload-process.js"></script>
-  <script src="../vendor/jquery/js/jquery.fileupload-image.js"></script>
-  <script src="../vendor/jquery/js/jquery.fileupload-audio.js"></script>
-  <script src="../vendor/jquery/js/jquery.fileupload-video.js"></script>
-  <script src="../vendor/jquery/js/jquery.fileupload-validate.js"></script>
-  <script src="../vendor/jquery/js/jquery.fileupload-ui.js"></script>
-  <script src="../vendor/jquery/js/main.js"></script> 
-  
-  <script src="../vendor/geonames/js/jsr_class.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../vendor/bootstrapValidator/js/bootstrapValidator.min.js"></script>
   
   <!-- Local Use -->
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/rentalProperty.css">
-  <script type="text/javascript" src="../js/header.js"></script>
-  <script type="text/javascript" src="../js/rentalProperty.js"></script>
 
 </head>
 <body>  
@@ -50,15 +28,15 @@
 	  				<div class='col-sm-1'></div>
   					<div class='col-sm-9'>
 			  			<ul class="nav nav-tabs">
-					  	<li class="active"><a data-toggle="tab" href="#location">Location</a></li>
-					  	<li><a data-toggle="tab" href="#contactInfo">Contact Info</a></li>
-					  	<li><a data-toggle="tab" href="#basicDetails">Basic Details</a></li>
-					  	<li><a data-toggle="tab" href="#photosMedia">Photos &amp; Media</a></li>
-					  	<li><a data-toggle="tab" href="#description">Description</a></li>
-					  	<li><a data-toggle="tab" href="#review">Review</a></li>
-					  	<li><a data-toggle="tab" href="#listingStatus">Listing Status</a></li>
+						  	<li class="active"><a data-toggle="tab" href="#location">Location</a></li>
+						  	<li><a data-toggle="tab" href="#contactInfo">Contact Info</a></li>
+						  	<li><a data-toggle="tab" href="#basicDetails">Basic Details</a></li>
+						  	<li><a data-toggle="tab" href="#photosMedia">Photos &amp; Media</a></li>
+						  	<li><a data-toggle="tab" href="#description">Description</a></li>
+						  	<li><a data-toggle="tab" href="#review">Review</a></li>
+						  	<li><a data-toggle="tab" href="#listingStatus">Listing Status</a></li>
 						</ul>
-					<form name="rentalLocation" class="form-horizontal" role="form">
+					<form name="rentalProperty" class="form-horizontal" role="form">
 						<div class="tab-content">
 							<div id="location" class="tab-pane fade in active">
 								<h3>Location</h3>
@@ -87,8 +65,8 @@
 								</div>
 								<div class="form-group">
 									<div class="col-sm-9">
-										<ul class="pager">
-										  <li><a href="#">Next</a></li>
+										<ul class="nav pager">
+										  <li><a data-toggle="tab" href="#contactInfo">Next</a></li>
 										</ul>
 									</div>
 								</div>
@@ -130,8 +108,8 @@
 								<div class="form-group">
 									<div class="col-sm-9">
 										<ul class="pager">
-										  <li><a href="#">Previous</a></li>
-										  <li><a href="#">Next</a></li>
+										  <li><a data-toggle="tab" href="#location">Previous</a></li>
+										  <li><a data-toggle="tab" href="#basicDetails">Next</a></li>
 										</ul>
 									</div>
 								</div>
@@ -279,8 +257,8 @@
 								<div class="form-group">
 									<div class="col-sm-9">
 										<ul class="pager">
-										  <li><a href="#">Previous</a></li>
-										  <li><a href="#">Next</a></li>
+										  <li><a data-toggle="tab" href="#contactInfo">Previous</a></li>
+										  <li><a data-toggle="tab" href="#photosMedia">Next</a></li>
 										</ul>
 									</div>
 								</div>
@@ -303,21 +281,21 @@
 												    <span class="btn btn-default fileinput-button">
 												        <i class="glyphicon glyphicon-upload"></i>
 												        <span>Select files...</span>
-												        <input type="file" name="files[]" multiple accept='.jpg,.jpeg,.pjpeg,.gif,.png'>
+												        <input type="file" name="files[]" multiple accept=".jpg,.jpeg,.pjpeg,.gif,.png">
 												    </span>
 										    </div>
 										</div>
 										<div class="col-sm-12">
-											<div class="col-lg-5 fileupload-progress fade">
-								                <!-- The global progress bar -->
-								                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-								                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-								                </div>
-								                <!-- The extended global progress state -->
-								                <div class="progress-extended">&nbsp;</div>
-								            </div>
-											<table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+											<div role="presentation" class="files"></div>
 										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-9">
+										<ul class="pager">
+										  <li><a data-toggle="tab" href="#basicDetails">Previous</a></li>
+										  <li><a data-toggle="tab" href="#description">Next</a></li>
+										</ul>
 									</div>
 								</div>
 							</div>
@@ -709,15 +687,23 @@
 								<div class="form-group">
 									<div class="col-sm-9">
 										<ul class="pager">
-										  <li><a href="#">Previous</a></li>
-										  <li><a href="#">Next</a></li>
+										  <li><a data-toggle="tab" href="#photosMedia">Previous</a></li>
+										  <li><a data-toggle="tab" href="#review">Next</a></li>
 										</ul>
 									</div>
 								</div>
 							</div>
 							<div id="review" class="tab-pane fade">
 							    <h3>Review</h3>
-							    <p>Some content in menu 2.</p>
+							    
+							    <div class="form-group">
+									<div class="col-sm-9">
+										<ul class="pager">
+										  <li><a data-toggle="tab" href="#description">Previous</a></li>
+										  <li><a>Submit</a></li>
+										</ul>
+									</div>
+								</div>
 							</div>
 							<div id="listingStatus" class="tab-pane fade">
 							    <h3>Listing Status</h3>
@@ -731,32 +717,35 @@
 	  	<?php footerCode(); ?>           
 	</div>
 	<?php loginModalCode(); ?>
-	<script src="../js/loginValidation.js"></script>
 	<?php registerModalCode(); ?>
-  	<script src="../js/registerValidation.js"></script>
-  	<script src="../js/geonames.js"></script>
+	<script>
+	  	window.onload = function() {
+	        <?php  
+	                echo 'getplaces(1269750,\'province\');'."\n";
+	        ?>
+	    };
+  	</script>
 	<script id="template-upload" type="text/x-tmpl">
 		{% for (var i=0, file; file=o.files[i]; i++) { %}
-    		<div class="row well well-sm">
-        		<div class='col-sm-2'>
-            		<span class="preview"></span>
-        		</div>
-				<div class='col-sm-5'>
-					<input type="text" class="form-control" id="photoCaption" placeholder="Photo Caption">
-        		</div>
-				<div class='col-sm-2'>
-            		<p class="name">{%=file.name%}</p>
-            		<strong class="error text-danger"></strong>
-        		</div>
-        		<div class='col-sm-1'>
-            		{% if (!i) { %}
-                		<button class="btn btn-warning cancel">
-                    		<i class="glyphicon glyphicon-trash"></i>
-                		</button>
-            		{% } %}
-        		</div>
-    		</div>
-		{% } %}
+			<div class="template-upload fade">
+				<div class="col-sm-9 well well-sm">
+        			<div class='col-sm-1'>
+            			<span class="preview"></span>
+        			</div>
+					<div class='col-sm-10'>
+						<input type="text" class="form-control" id="photoCaption" placeholder="Photo Caption">
+						<strong class="error text-danger"></strong>
+        			</div>
+        			<div class='col-sm-1'>
+            			{% if (!i) { %}
+                			<button class="btn btn-warning cancel">
+                    			<i class="glyphicon glyphicon-trash"></i>
+                			</button>
+            			{% } %}
+        			</div>
+				</div>
+			</div>
+			{% } %}
 	</script>
 
 	<script id="template-download" type="text/x-tmpl">
@@ -800,6 +789,32 @@
         		</td>
     		</tr>
 		{% } %}
-	</script>	
+	</script>
+	<script src="../vendor/jquery/js/jquery.min.js"></script>  
+  	<script src="../vendor/jquery/js/jquery.ui.widget.js"></script>
+  	<script src="../vendor/blueimp/js/tmpl.min.js"></script>
+  	<script src="../vendor/blueimp/js/load-image.all.min.js"></script>
+  	<script src="../vendor/blueimp/js/canvas-to-blob.min.js"></script>
+  	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/bootstrapValidator/js/bootstrapValidator.min.js"></script>
+ 	<script src="../vendor/blueimp/js/jquery.blueimp-gallery.min.js"></script>
+ 	<script src="../vendor/jquery/js/jquery.iframe-transport.js"></script>
+    <script src="../vendor/jquery/js/jquery.fileupload.js"></script>
+    <script src="../vendor/jquery/js/jquery.fileupload-process.js"></script>
+    <script src="../vendor/jquery/js/jquery.fileupload-image.js"></script>
+    <script src="../vendor/jquery/js/jquery.fileupload-audio.js"></script>
+    <script src="../vendor/jquery/js/jquery.fileupload-video.js"></script>
+    <script src="../vendor/jquery/js/jquery.fileupload-validate.js"></script>
+    <script src="../vendor/jquery/js/jquery.fileupload-ui.js"></script>
+    <script src="../vendor/jquery/js/main.js"></script>  
+    <script src="../vendor/geonames/js/jsr_class.js"></script>
+    <script src="../js/geonames.js"></script>
+    
+    <!-- local use -->
+    <script type="text/javascript" src="../js/header.js"></script>
+    <script src="../js/loginValidation.js"></script>
+    <script src="../js/registerValidation.js"></script>
+    <script type="text/javascript" src="../js/rentalProperty.js"></script>
+  	
 </body>
 </html>

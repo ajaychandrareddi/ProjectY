@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	
+	
 	$("#collapseRooms").on("hide.bs.collapse", function(){
 		$("#moreRooms").html('+ Show All Rooms');
 	});
@@ -32,6 +34,12 @@ $(document).ready(function(){
 	});
 	$("#collapseFnR").on("show.bs.collapse", function(){
 		$("#moreFnR").html('- Hide All Facilities & Recreation');
+	});
+	
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		var target = e.target.attributes.href.value;
+		$(".nav-tabs a").parent().removeClass('active');
+		$(".nav-tabs a[href=" + target + "]").parent().addClass('active');
 	});
 
 });

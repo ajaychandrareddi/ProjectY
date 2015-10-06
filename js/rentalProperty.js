@@ -22,6 +22,13 @@ $(document).ready(function(){
 		$("#moreAppliances").html('- Hide All Appliances');
 	});
 	
+	$("#collapseAdditionalFeatures").on("hide.bs.collapse", function(){
+		$("#moreAdditionalFeatures").html('+ Show All Additional Features');
+	});
+	$("#collapseAdditionalFeatures").on("show.bs.collapse", function(){
+		$("#moreAdditionalFeatures").html('- Hide All Additional Features');
+	});
+	
 	$("#collapseSnR").on("hide.bs.collapse", function(){
 		$("#moreSnR").html('+ Show All Security & Access');
 	});
@@ -41,5 +48,63 @@ $(document).ready(function(){
 		$(".nav-tabs a").parent().removeClass('active');
 		$(".nav-tabs a[href=" + target + "]").parent().addClass('active');
 	});
-
+	
+	$('#rentalPropertyForm').bootstrapValidator({
+		message: 'This value is not valid',
+		excluded: [':disabled'],
+		feedbackIcons: {
+	        valid: 'glyphicon glyphicon-ok',
+	        invalid: 'glyphicon glyphicon-remove',
+	        validating: 'glyphicon glyphicon-refresh'
+	    },
+	    fields: {
+	    	streetAddress: {
+	    		message: 'Street address is not valid',
+	    			validators: {
+	    				notEmpty: {
+	    					message: 'Street address is required and cannot be empty'
+	    					  }
+	    				 }
+	    			},
+	    	province: {
+	            validators: {
+	            	notEmpty: {
+	                    message: 'The state is required and can\'t be empty'
+	            			}
+	            		}
+	                },
+			region: {
+	            validators: {
+	            	notEmpty: {
+	                    message: 'The division is required and can\'t be empty'
+	            			}
+	            		}
+	                },
+			city: {
+	            validators: {
+	            	notEmpty: {
+	                    message: 'The city is required and can\'t be empty'
+	            			}
+	            		}
+	                },
+            'forRentBy[]': {
+	            validators: {
+	            	notEmpty: {
+	                    message: 'For rent by is required and can\'t be empty'
+	            			}
+	            		}
+	                },
+            phoneNumber: {
+	            validators: {
+	            	notEmpty: {
+	                    message: 'The phone number is required and can\'t be empty'
+	            		},
+	                phone: {
+            			message: 'This is not a valid INDIA phone number',
+            			country: 'IN'
+	                		}
+            			}
+	                }
+	            }
+			});
 });

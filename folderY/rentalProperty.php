@@ -36,18 +36,18 @@
 						  	<li><a data-toggle="tab" href="#review">Review</a></li>
 						  	<li><a data-toggle="tab" href="#listingStatus">Listing Status</a></li>
 						</ul>
-					<form name="rentalProperty" class="form-horizontal" role="form">
+					<form id="rentalPropertyForm" name="rentalPropertyForm" class="form-horizontal" role="form">
 						<div class="tab-content">
 							<div id="location" class="tab-pane fade in active">
 								<h3>Location</h3>
 								<div class="form-group">
 									<div class="col-sm-7">
 										<label for="streetaddress">Street Address:</label>
-										<input type="text" class="form-control" id="street">
+										<input type="text" class="form-control" id="streetAddress" name="streetAddress">
 									</div>
 									<div class="col-sm-2">
 										<label for="unit">Unit:</label>
-										<input type="text" class="form-control" id="unit">
+										<input type="text" class="form-control" id="unit" name="unit">
 									</div>
 								</div>
 							    <div class="form-group form-inline">
@@ -77,32 +77,32 @@
 								    	<div class="col-sm-9">
 								    	<label for="forrentby">For Rent By:</label>
 									    <div class="radio">
-										  <label><input type="radio" name="optradio">Management Company/Broker</label>
+										  <label><input type="radio" name="forRentBy[]">Management Company/Broker</label>
 										</div>
 										<div class="radio">
-										  <label><input type="radio" name="optradio">Owner</label>
+										  <label><input type="radio" name="forRentBy[]">Owner</label>
 										</div>
 										<div class="radio disabled">
-										  <label><input type="radio" name="optradio">Tenant</label>
+										  <label><input type="radio" name="forRentBy[]">Tenant</label>
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-9">
 										<label for="propertyname">Property Name:</label>
-										<input type="text" class="form-control" id="propertyname">
+										<input type="text" class="form-control" id="propertyName" name="propertyName">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-9">
 										<label for="email">Email:</label>
-										<input type="text" class="form-control" id="email">
+										<input type="text" class="form-control" id="email" name="email">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-9">
 										<label for="phone">Phone:</label>
-										<input type="text" class="form-control" id="phone">
+										<input type="text" class="form-control" id="phoneNumber" name="phoneNumber">
 									</div>
 								</div>
 								<div class="form-group">
@@ -537,7 +537,7 @@
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Fireplace</label>
+										<label class="checkbox-inline"><input type="checkbox" value="">Granite floor</label>
 									</div>
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">High/Vaulted Cealing</label>
@@ -545,6 +545,16 @@
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Granite Countertop</label>
 									</div>
+								</div>
+								<div id="collapseAdditionalFeatures" class="collapse">
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" value="">Fire Place</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<a id="moreAdditionalFeatures" class="accordion-toggle" data-toggle="collapse" href="#collapseAdditionalFeatures"><span>+ Show</span> Additional Features</a>
 								</div>
 								<h3>Community Features</h3>
 								<label for="petpolicy">Building Type:</label>

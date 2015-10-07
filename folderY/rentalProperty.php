@@ -12,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../vendor/bootstrapValidator/css/bootstrapValidator.min.css">
+  <link rel="stylesheet" href="../vendor/bootstrapValidator/css/bootstrap-datetimepicker.min.css">
   <link rel="stylesheet" href="../vendor/blueimp/css/blueimp-gallery.min.css">
   <link rel="stylesheet" href="../vendor/jquery/css/jquery.fileupload.css">
   <link rel="stylesheet" href="../vendor/jquery/css/jquery.fileupload-ui.css">
@@ -28,11 +29,11 @@
 	  				<div class='col-sm-1'></div>
   					<div class='col-sm-9'>
 			  			<ul class="nav nav-tabs">
-						  	<li class="active"><a data-toggle="tab" href="#location">Location</a></li>
-						  	<li><a data-toggle="tab" href="#contactInfo">Contact Info</a></li>
-						  	<li><a data-toggle="tab" href="#basicDetails">Basic Details</a></li>
-						  	<li><a data-toggle="tab" href="#photosMedia">Photos &amp; Media</a></li>
-						  	<li><a data-toggle="tab" href="#description">Description</a></li>
+						  	<li class="active"><a data-toggle="tab" href="#location">Location <i class="fa"></i></a></li>
+						  	<li><a data-toggle="tab" href="#contactInfo">Contact Info <i class="fa"></i></a></li>
+						  	<li><a data-toggle="tab" href="#basicDetails">Basic Details <i class="fa"></i></a></li>
+						  	<li><a data-toggle="tab" href="#photosMedia">Photos &amp; Media <i class="fa"></i></a></li>
+						  	<li><a data-toggle="tab" href="#description">Description <i class="fa"></i></a></li>
 						  	<li><a data-toggle="tab" href="#review">Review</a></li>
 						  	<li><a data-toggle="tab" href="#listingStatus">Listing Status</a></li>
 						</ul>
@@ -118,18 +119,18 @@
 							    <h3>Lease Terms</h3>
 							    <div class="form-group">
 									<div class="col-sm-5">
-										<label for="rent">Rent:</label>
-										<input type="text" class="form-control" id="rent">
+										<label for="rentAmount">Rent:</label>
+										<input type="text" class="form-control" id="rentAmount" name="rentAmount">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-5">
-										<label for="deposit">Deposit:</label>
-										<input type="text" class="form-control" id="deposit">
+										<label for="depositAmount">Deposit:</label>
+										<input type="text" class="form-control" id="depositAmount" name="depositAmount">
 									</div>
 									<div class="col-sm-5">
-								      <label for="leaseduration">Lease Duration:</label>
-									  <select class="form-control" id="leaseduration">
+								      <label for="leaseDuration">Lease Duration:</label>
+									  <select class="form-control" id="leaseDuration" name="leaseDuration">
 									  	<option>-- Select Length --</option>
 									    <option>1 Year</option>
 									    <option>6 Months</option>
@@ -141,21 +142,26 @@
 								</div>
 								<div class="form-group">
 									<div class="col-sm-5">
-										<label for="dateavailable">Date Available:</label>
-										<input type="text" class="form-control" id="dateavailable">
+										<label for="dateAvailable">Date Available:</label>
+										<div class="input-group date" id="dateAvailablePicker">
+											<input type="text" class="form-control" name="dateAvailable">
+											<span class="input-group-addon">
+							                    <span class="glyphicon glyphicon-calendar"></span>
+							                </span>
+							            </div>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-12">
-									    <label for="leasedetails">Additional Lease Details:</label>
-									    <textarea class="form-control" rows="5" id="leasedetails"></textarea>
+									    <label for="leaseDetails">Additional Lease Details:</label>
+									    <textarea class="form-control" rows="5" id="leaseDetails" name="leaseDetails"></textarea>
 							      	</div>
 							    </div>
 							    <h3>Rental Details</h3>
 							    <div class="form-group">
 									<div class="col-sm-5">
-								      <label for="propertytype">Property Type:</label>
-									  <select class="form-control" id="propertytype">
+								      <label for="propertyType">Property Type:</label>
+									  <select class="form-control" id="propertyType" name="propertyType">
 									  	<option>-- Select Type --</option>
 									    <option>Apartment</option>
 									    <option>Condo</option>
@@ -165,11 +171,17 @@
 									    <option>Other</option>
 									  </select>
 									</div>
+									<div class="col-sm-5">
+										<div class="checkbox">
+											<br>
+										  <label for="roomForRent"><input type="checkbox" value="">Room for Rent</label>
+										</div>
+									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-5">
 								      <label for="bedrooms">Bed Rooms:</label>
-									  <select class="form-control" id="bedrooms">
+									  <select class="form-control" id="bedrooms" name="bedrooms">
 									  	<option>-- Select Beds --</option>
 									    <option>Studion</option>
 									    <option>1 Bed</option>
@@ -182,7 +194,7 @@
 									</div>
 									<div class="col-sm-5">
 								      <label for="bathrooms">Bath Rooms:</label>
-									  <select class="form-control" id="bathrooms">
+									  <select class="form-control" id="bathrooms" name="bathrooms">
 									  	<option>-- Select Baths --</option>
 									    <option>1 Bath</option>
 									    <option>1.5 Baths</option>
@@ -200,18 +212,23 @@
 								</div>
 								<div class="form-group">
 									<div class="col-sm-5">
-										<label for="squarefeet">Square Feet:</label>
-										<input type="text" class="form-control" id="squarefeet">
+										<label for="squareFeet">Square Feet:</label>
+										<input type="text" class="form-control" id="squareFeet" name="squareFeet">
 									</div>
 									<div class="col-sm-5">
-										<label for="unitfloor">Unit Floor:</label>
-										<input type="text" class="form-control" id="unitfloor">
+										<label for="unitFloor">Unit Floor:</label>
+										<input type="text" class="form-control" id="unitFloor" name="unitFloor">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-5">
-										<label for="yearbuilt">Year Built:</label>
-										<input type="text" class="form-control" id="yearbuilt">
+										<label for="yearBuilt">Year Built:</label>
+										<div class="input-group date" id="yearBuiltPicker">
+											<input type="text" class="form-control" name="yearBuilt">
+											<span class="input-group-addon">
+							                    <span class="glyphicon glyphicon-calendar"></span>
+							                </span>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -223,8 +240,8 @@
 								</div>
 								<div class="form-group">
 									<div class="col-sm-5">
-								      <label for="parkingspaces">Parking Spaces:</label>
-									  <select class="form-control" id="parkingspaces">
+								      <label for="parkingSpaces">Parking Spaces:</label>
+									  <select class="form-control" id="parkingSpaces" name="parkingSpaces">
 									  	<option>-- Select --</option>
 									    <option>None</option>
 									    <option>1</option>
@@ -234,8 +251,8 @@
 									  </select>
 									</div>
 									<div class="col-sm-5">
-								      <label for="parkingtype">Parking Type:</label>
-									  <select class="form-control" id="parkingtype">
+								      <label for="parkingType">Parking Type:</label>
+									  <select class="form-control" id="parkingType" name="parkingType">
 									  	<option>-- Select Type --</option>
 									    <option>Garage</option>
 									    <option>Carport</option>
@@ -246,7 +263,7 @@
 								</div>
 								<div class="form-group">
 									<div class="col-sm-9">
-										<label for="petpolicy">Pet Policy:</label>
+										<label for="petPolicy">Pet Policy:</label>
 									</div>
 									<div class="col-sm-9">
 										<label class="checkbox-inline"><input type="checkbox" value="">No Pets Allowed</label>
@@ -303,20 +320,20 @@
 							    <h3>Description</h3>
 							    <div class="form-group">
 									<div class="col-sm-9">
-										<label for="propertytitle">Property Title:</label>
-										<input type="text" class="form-control" id="propertytitle">
+										<label for="propertyTitle">Property Title:</label>
+										<input type="text" class="form-control" id="propertyTitle" name="propertyTitle">
 									</div>
 								</div>
 								<div class="form-group">
-									<div class="col-sm-12">
-									    <label for="propertydescription">Property Description:</label>
-									    <textarea class="form-control" rows="5" id="propertydescription"></textarea>
+									<div class="col-sm-9">
+									    <label for="propertyDescription">Property Description:</label>
+									    <textarea class="form-control" rows="5" id="propertyDescription" name="propertyDescription"></textarea>
 							      	</div>
 							    </div>
 							    <div class="form-group">
 									<div class="col-sm-9">
-										<label for="propertywebsiteurl">Property Website URL:</label>
-										<input type="text" class="form-control" id="propertywebsiteurl">
+										<label for="propertyWebsiteUrl">Property Website URL:</label>
+										<input type="text" class="form-control" id="propertyWebsiteUrl" name="propertyWebsiteUrl">
 									</div>
 								</div>
 								<h3>Unit Features</h3>
@@ -807,6 +824,8 @@
   	<script src="../vendor/blueimp/js/canvas-to-blob.min.js"></script>
   	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../vendor/bootstrapValidator/js/bootstrapValidator.min.js"></script>
+    <script src="../vendor/moment/js/moment.min.js"></script>
+    <script src="../vendor/bootstrapValidator/js/bootstrap-datetimepicker.min.js"></script>
  	<script src="../vendor/blueimp/js/jquery.blueimp-gallery.min.js"></script>
  	<script src="../vendor/jquery/js/jquery.iframe-transport.js"></script>
     <script src="../vendor/jquery/js/jquery.fileupload.js"></script>

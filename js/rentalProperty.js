@@ -1,5 +1,30 @@
 $(document).ready(function(){
 	
+	$('#dateAvailablePicker').datetimepicker({
+		format: 'DD/MM/YYYY h:m A',
+		minDate: new Date()
+	});
+	
+	$('#dateAvailablePicker')
+    .on('dp.change dp.show', function(e) {
+        $('#rentalPropertyForm')
+            .data('bootstrapValidator')
+            .updateStatus('dateAvailable', 'NOT_VALIDATED', null)
+            .validateField('dateAvailable');
+    });
+	
+	$('#yearBuiltPicker').datetimepicker({
+		format: 'YYYY',
+		maxDate: new Date()
+	});
+	
+	$('#yearBuiltPicker')
+    .on('dp.change dp.show', function(e) {
+        $('#rentalPropertyForm')
+            .data('bootstrapValidator')
+            .updateStatus('yearBuilt', 'NOT_VALIDATED', null)
+            .validateField('yearBuilt');
+    });
 	
 	$("#collapseRooms").on("hide.bs.collapse", function(){
 		$("#moreRooms").html('+ Show All Rooms');
@@ -104,7 +129,104 @@ $(document).ready(function(){
             			country: 'IN'
 	                		}
             			}
-	                }
-	            }
-			});
+	                },
+            rentAmount: {
+            	validators: {
+	            	notEmpty: {
+	                    message: 'The rent amount is required and can\'t be empty'
+	            		},
+                	numeric: {
+        			    message: 'The rent amount should be a numeric value'	
+                		}
+            		}
+                },
+            depositAmount: {
+            	validators: {
+                	numeric: {
+        			    message: 'The deposit amount should be a numeric value'	
+            			}
+            		}
+            	},
+        	dateAvailable: {
+        		validators: {
+        			notEmpty: {
+        			    message: 'The date available is required and can\'t be empty'	
+            			},
+        			date: {
+                        format: 'DD/MM/YYYY h:m A',
+                        message: 'The date is not valid. Valid Format is DD/MM/YYYY format h:m A'
+                        }
+        			}
+        		},
+    		propertyType: {
+	            validators: {
+	            	notEmpty: {
+	                    message: 'The property type is required and can\'t be empty'
+	            		}
+	            	}
+	            },
+	        bedrooms: {
+	            validators: {
+	            	notEmpty: {
+	                    message: 'The number of bedrooms is required and can\'t be empty'
+	            		}
+	            	}
+	            },
+            bathrooms: {
+	            validators: {
+	            	notEmpty: {
+	                    message: 'The number of bathrooms is required and can\'t be empty'
+	            		}
+	            	}
+	            },
+            squareFeet: {
+            	validators: {
+                	integer: {
+        			    message: 'The square feet should be a numberic value'	
+                		}
+            		}
+                },
+            unitFloor: {
+            	validators: {
+                	integer: {
+        			    message: 'The unit floor should be a numberic value'	
+                		}
+            		}
+                },
+            yearBuilt: {
+        		validators: {
+        			callback: {
+                        message: 'The year is not valid',
+                        callback: function(value, validator) {
+                            var m = new moment(value, 'YYYY', true);
+                            if (!m.isValid()) {
+                                return false;
+                            }
+                            	return true;
+                        	}
+                        }
+        			}
+        		},
+    		propertyTitle: {
+    			validators: {
+	            	notEmpty: {
+	                    message: 'The property title is required and can\'t be empty'
+	            		}
+	            	}
+    			},
+			propertyWebsiteUrl: {
+				validators: {
+                    uri: {
+                        allowLocal: true,
+                        message: 'The input is not a valid URL'
+                    	}
+                	}
+				}
+            }
+		})
+		.on('success.form.bv', function(e) {
+            console.log('success.form.bv');
+            // If you want to prevent the default handler (bootstrapValidator._onSuccess(e))
+            // e.preventDefault();
+        });
 });

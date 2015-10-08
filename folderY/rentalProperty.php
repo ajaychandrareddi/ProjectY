@@ -420,7 +420,7 @@
 								<div class="form-group">
 									<a id="moreRooms" class="accordion-toggle" data-toggle="collapse" href="#collapseRooms"><span>+ Show</span> All Rooms</a>
 								</div>
-								<label for="petpolicy">Exterior:</label>
+								<label for="exterior">Exterior:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Private Pool</label>
@@ -470,7 +470,7 @@
 								<div class="form-group">
 									<a id="moreExterirors" class="accordion-toggle" data-toggle="collapse" href="#collapseExteriors"><span>+ Show</span> All Exteriors</a>
 								</div>
-								<label for="petpolicy">Appliances:</label>
+								<label for="appliances">Appliances:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Range or Oven</label>
@@ -506,7 +506,7 @@
 								<div class="form-group">
 									<a id="moreAppliances" class="accordion-toggle" data-toggle="collapse" href="#collapseAppliances"><span>+ Show</span> All Appliances</a>
 								</div>
-								<label for="petpolicy">Cooling &amp; Heating:</label>
+								<label for="coolingAndHeating">Cooling &amp; Heating:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Central A/C</label>
@@ -523,7 +523,7 @@
 										<label class="checkbox-inline"><input type="checkbox" value="">Heat: forced air</label>
 									</div>
 								</div>
-								<label for="petpolicy">Wiring:</label>
+								<label for="wriring">Wiring:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Cable-ready</label>
@@ -540,7 +540,7 @@
 										<label class="checkbox-inline"><input type="checkbox" value="">Intercom system</label>
 									</div>
 								</div>
-								<label for="petpolicy">Additional Features:</label>
+								<label for="additionalFeatures">Additional Features:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Tile floor</label>
@@ -574,7 +574,7 @@
 									<a id="moreAdditionalFeatures" class="accordion-toggle" data-toggle="collapse" href="#collapseAdditionalFeatures"><span>+ Show</span> Additional Features</a>
 								</div>
 								<h3>Community Features</h3>
-								<label for="petpolicy">Building Type:</label>
+								<label for="buildingType">Building Type:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">New Property</label>
@@ -688,7 +688,7 @@
 								<div class="form-group">
 									<a id="moreFnR" class="accordion-toggle" data-toggle="collapse" href="#collapseFnR"><span>+ Show</span> All Facilities &amp; Recreation</a>
 								</div>
-								<label for="petpolicy">Communal Parking:</label>
+								<label for="communalParking">Communal Parking:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
 										<label class="checkbox-inline"><input type="checkbox" value="">Guest Parking</label>
@@ -721,15 +721,138 @@
 								</div>
 							</div>
 							<div id="review" class="tab-pane fade">
-							    <h3>Review</h3>
-							    
 							    <div class="form-group">
-									<div class="col-sm-9">
-										<ul class="pager">
-										  <li><a data-toggle="tab" href="#description">Previous</a></li>
-										  <li><a>Submit</a></li>
-										</ul>
-									</div>
+							    	<div class="col-sm-6">
+							    		<div>Photos</div>
+							    	</div>
+							    	<div class="col-sm-6">
+							    		<div>Map</div>
+							    	</div>
+							    </div>
+							    <h4>Lease Details</h4>
+							    <div class="form-group">
+							    	<div class="col-sm-4">
+							    		<label for="r_rentAmount">Rent</label>
+							    		<p id="r_rentAmount" class="form-control-static"></p>
+							    	</div>
+							    	<div class="col-sm-4">
+							    		<label for="r_depositAmount">Deposit</label>
+							    		<p id="r_depositAmount" class="form-control-static"></p>
+							    	</div>
+							    	<div class="col-sm-4">
+							    		<label for="r_leaseDuration">Lease Duration</label>
+							    		<p id="r_leaseDuration" class="form-control-static"></p>
+							    	</div>
+							    </div>
+							    <div class="form-group">
+							    	<div class="col-sm-4">
+							    		<label for="r_dateAvailable">Date Available</label>
+							    		<p id="r_dateAvailable" class="form-control-static"></p>
+							    	</div>
+							    </div>
+							    <div class="form-group">
+							    	<div class="col-sm-12">
+							    		<label for="r_leaseDetails">Lease Terms</label>
+							    		<p id="r_leaseDetails" class="form-control-static"></p>
+							    	</div>
+							    </div>
+							    <h4>Property Details</h4>
+							    <div class="form-group">
+							    	<div class="col-sm-4">
+							    		<label for="r_propertyType">Property Type</label>
+							    		<p id="r_propertyType" class="form-control-static"></p>
+							    	</div>
+							    	<div class="col-sm-4">
+							    		<label for="r_bedrooms">Bedrooms</label>
+							    		<p id="r_bedrooms" class="form-control-static"></p>
+							    	</div>
+							    	<div class="col-sm-4">
+							    		<label for="r_bathrooms">Bathrooms</label>
+							    		<p id="r_bathrooms" class="form-control-static"></p>
+							    	</div>
+							    </div>
+							    <div class="form-group">
+							    	<div class="col-sm-4">
+							    		<label for="r_squareFeet">Square Feet</label>
+							    		<p id="r_squareFeet" class="form-control-static"></p>
+							    	</div>
+							    	<div class="col-sm-4">
+							    		<label for="r_unitFloor">Unit Floor</label>
+							    		<p id="r_unitFloor" class="form-control-static"></p>
+							    	</div>
+							    	<div class="col-sm-4">
+							    		<label for="r_yearBuilt">Year Built</label>
+							    		<p id="r_yearBuilt" class="form-control-static"></p>
+							    	</div>
+							    </div>
+							    <div class="form-group">
+							    	<div class="col-sm-4">
+							    		<label for="r_furnished">Furnished</label>
+							    		<p id="r_furnished" class="form-control-static"></p>
+							    	</div>
+							    	<div class="col-sm-4">
+							    		<label for="r_petPolicy">Pet Policy</label>
+							    		<p id="r_petPolicy" class="form-control-static"></p>
+							    	</div>
+							    	<div class="col-sm-4">
+							    		<label for="r_parkingSpaces">Parking Spaces</label>
+							    		<p id="r_parkingSpaces" class="form-control-static"></p>
+							    	</div>
+							    </div>
+							    <div class="form-group">
+							    	<div class="col-sm-4">
+							    		<label for="r_parkingType">Parking Type</label>
+							    		<p id="r_parkingType" class="form-control-static"></p>
+							    	</div>
+							    </div>
+							    <h4>Property Description</h4>
+							    <div class="form-group">
+							    	<div class="col-sm-12">
+							    		<label for="r_propertyTitle">Property Title</label>
+							    		<p id="r_propertyTitle" class="form-control-static"></p>
+							    	</div>
+							    </div>
+							    <div class="form-group">
+							    	<div class="col-sm-12">
+							    		<label for="r_propertyDescription">Property Description</label>
+							    		<p id="r_propertyDescription" class="form-control-static"></p>
+							    	</div>
+							    </div>
+							    <div class="form-group">
+							    	<div class="col-sm-12">
+							    		<label for="r_propertyWebsiteUrl">Property Website URL</label>
+							    		<p id="r_propertyWebsiteUrl" class="form-control-static"></p>
+							    	</div>
+							    </div>
+							    <h4>Amenities</h4>
+							    <div class="form-group">
+							    	<div class="col-sm-4">
+							    		g
+							    	</div>
+							    	<div class="col-sm-4">
+							    		g
+							    	</div>
+							    	<div class="col-sm-4">
+							    		g
+							    	</div>
+							    </div>
+							    <h4>Contact Information</h4>
+							    <div class="form-group">
+							    	<div class="col-sm-4">
+							    		g
+							    	</div>
+							    	<div class="col-sm-4">
+							    		g
+							    	</div>
+							    	<div class="col-sm-4">
+							    		g
+							    	</div>
+							    </div>
+								<div class="col-sm-12">
+									<ul class="pager">
+									  <li><a data-toggle="tab" href="#description">Previous</a></li>
+									  <li><a>Submit</a></li>
+									</ul>
 								</div>
 							</div>
 							<div id="listingStatus" class="tab-pane fade">

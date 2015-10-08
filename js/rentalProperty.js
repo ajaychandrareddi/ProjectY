@@ -223,10 +223,19 @@ $(document).ready(function(){
                 	}
 				}
             }
-		})
-		.on('success.form.bv', function(e) {
-            console.log('success.form.bv');
-            // If you want to prevent the default handler (bootstrapValidator._onSuccess(e))
-            // e.preventDefault();
-        });
+		});
+	
+
+		$("[href='#review']").click(function(){
+			event.preventDefault();
+			preview();
+		});
+		
+		function preview(){
+			var fields = $( ":input" ).serializeArray();
+			console.log(fields);
+		    $.each( fields, function( i, field ) {
+		    		$('#r_' + field.name).html($('#' + field.name).val());
+		    });
+		}
 });

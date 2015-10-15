@@ -1,5 +1,34 @@
 $(document).ready(function(){
 	
+	$("#preview").preview({
+        form : '#rentalPropertyForm',
+        fields : 'input[type=text], select, textarea',
+        event  : 'input',
+        init   : function (preview) {
+        	preview.fields.each(function(){
+        		var $this = $(this).context.name;
+	        	preview.addProcessor($this, function (name, value, input) {
+	        		if (value === '' || value === '-1' || value === 'on') {
+	    				return '--';
+	    			}
+	        	})
+           })
+        }
+     });
+	
+	$("#preview").preview({
+        form : '#rentalPropertyForm',
+        fields : 'input[type=checkbox]',
+        event  : 'onclick',
+        init   : function (preview) {
+        	preview.fields.each(function(){
+        		$this = $(this).context.name;
+        		console.log($this);
+        	})
+        }
+     });
+	
+	
 	$('#dateAvailablePicker').datetimepicker({
 		format: 'DD/MM/YYYY h:m A',
 		minDate: new Date()
@@ -26,46 +55,16 @@ $(document).ready(function(){
             .validateField('yearBuilt');
     });
 	
-	$("#collapseRooms").on("hide.bs.collapse", function(){
-		$("#moreRooms").html('+ Show All Rooms');
-	});
-	$("#collapseRooms").on("show.bs.collapse", function(){
-		$("#moreRooms").html('- Hide All Rooms');
-	});
-	
-	$("#collapseExteriors").on("hide.bs.collapse", function(){
-		$("#moreExterirors").html('+ Show All Exteriors');
-	});
-	$("#collapseExteriors").on("show.bs.collapse", function(){
-		$("#moreExterirors").html('- Hide All Exteriors');
+	$(".collapse").on("hide.bs.collapse", function (e) {
+		var options = e.target.attributes.title.value;
+		var name = e.target.attributes.id.value;
+		$('#more' +name).html('+ Show More ' +options);
 	});
 	
-	$("#collapseAppliances").on("hide.bs.collapse", function(){
-		$("#moreAppliances").html('+ Show All Appliances');
-	});
-	$("#collapseAppliances").on("show.bs.collapse", function(){
-		$("#moreAppliances").html('- Hide All Appliances');
-	});
-	
-	$("#collapseAdditionalFeatures").on("hide.bs.collapse", function(){
-		$("#moreAdditionalFeatures").html('+ Show All Additional Features');
-	});
-	$("#collapseAdditionalFeatures").on("show.bs.collapse", function(){
-		$("#moreAdditionalFeatures").html('- Hide All Additional Features');
-	});
-	
-	$("#collapseSnR").on("hide.bs.collapse", function(){
-		$("#moreSnR").html('+ Show All Security & Access');
-	});
-	$("#collapseSnR").on("show.bs.collapse", function(){
-		$("#moreSnR").html('- Hide All Security & Access');
-	});
-	
-	$("#collapseFnR").on("hide.bs.collapse", function(){
-		$("#moreFnR").html('+ Show All Facilities & Recreation');
-	});
-	$("#collapseFnR").on("show.bs.collapse", function(){
-		$("#moreFnR").html('- Hide All Facilities & Recreation');
+	$('.collapse').on('show.bs.collapse', function (e) {
+		var options = e.target.attributes.title.value;
+		var name = e.target.attributes.id.value;
+		$('#more' +name).html('- Hide ' +options);
 	});
 	
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -135,14 +134,14 @@ $(document).ready(function(){
 	            	notEmpty: {
 	                    message: 'The rent amount is required and can\'t be empty'
 	            		},
-                	numeric: {
+            		integer: {
         			    message: 'The rent amount should be a numeric value'	
                 		}
             		}
                 },
             depositAmount: {
             	validators: {
-                	numeric: {
+            		integer: {
         			    message: 'The deposit amount should be a numeric value'	
             			}
             		}
@@ -224,18 +223,5 @@ $(document).ready(function(){
 				}
             }
 		});
-	
 
-		$("[href='#review']").click(function(){
-			event.preventDefault();
-			preview();
-		});
-		
-		function preview(){
-			var fields = $( ":input" ).serializeArray();
-			console.log(fields);
-		    $.each( fields, function( i, field ) {
-		    		$('#r_' + field.name).html($('#' + field.name).val());
-		    });
-		}
 });

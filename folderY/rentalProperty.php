@@ -43,23 +43,23 @@
 								<h3>Location</h3>
 								<div class="form-group">
 									<div class="col-sm-7">
-										<label for="streetaddress">Street Address:</label>
-										<input type="text" class="form-control" id="streetAddress" name="streetAddress">
+										<label for="streetAddress">Street Address:</label>
+										<input type="text" class="form-control" name="fields[streetAddress]">
 									</div>
 									<div class="col-sm-2">
 										<label for="unit">Unit:</label>
-										<input type="text" class="form-control" id="unit" name="unit">
+										<input type="text" class="form-control" name="fields[unit]">
 									</div>
 								</div>
 							    <div class="form-group form-inline">
 							    	<div class="col-sm-9">
-										<select class="form-control input-sm" name="province" id="province" onchange="getplaces(this.value,'region');">
+										<select class="form-control input-sm" id="province" name="fields[province]" onchange="getplaces(this.value,'region');">
 											<option value="<?=$_POST['province']?>"> </option>
 									    </select>
-										<select class="form-control input-sm" name="region" id="region" onchange="getplaces(this.value,'city');">
+										<select class="form-control input-sm" id="region" name="fields[region]" onchange="getplaces(this.value,'city');">
 											<option value="<?=$_POST['region']?>">-- Select Division --</option>
 									    </select>
-										<select class="form-control input-sm" name="city" id="city">
+										<select class="form-control input-sm" id="city" name="fields[city]">
 											<option value="<?=$_POST['city']?>">-- Select City --</option>
 									    </select>
 								    </div>
@@ -78,38 +78,38 @@
 								    	<div class="col-sm-9">
 								    	<label for="forRentBy">For Rent By:</label>
 									    <div class="radio">
-										  <label><input type="radio" name="forRentBy[]">Management Company/Broker</label>
+										  <label><input type="radio" name="fields[forRentBy]">Management Company/Broker</label>
 										</div>
 										<div class="radio">
-										  <label><input type="radio" name="forRentBy[]">Owner</label>
+										  <label><input type="radio" name="fields[forRentBy]">Owner</label>
 										</div>
 										<div class="radio">
-										  <label><input type="radio" name="forRentBy[]">Tenant</label>
+										  <label><input type="radio" name="fieldsforRentBy]">Tenant</label>
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-9">
 										<label for="contactName">Contact Name:</label>
-										<input type="text" class="form-control" id="contactName" name="contactName">
+										<input type="text" class="form-control" name="fields[contactName]">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-9">
 										<label for="companyName">Company Name:</label>
-										<input type="text" class="form-control" id="companyName" name="companyName">
+										<input type="text" class="form-control" name="fields[companyName]">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-9">
 										<label for="email">Email:</label>
-										<input type="text" class="form-control" id="email" name="email">
+										<input type="text" class="form-control" name="fields[email]">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-9">
 										<label for="phone">Phone:</label>
-										<input type="text" class="form-control" id="phone" name="phone">
+										<input type="text" class="form-control" name="fields[phone]">
 									</div>
 								</div>
 								<div class="form-group">
@@ -130,7 +130,7 @@
 											<span class="input-group-addon">
 								                    <span>&#8377;</span>
 								            </span>
-											<input type="text" class="form-control" id="rentAmount" name="rentAmount">
+											<input type="text" class="form-control" name="fields[rentAmount]">
 											<span class="input-group-addon">
 								                    <span>.00</span>
 								            </span>
@@ -144,7 +144,7 @@
 											<span class="input-group-addon">
 								                    <span>&#8377;</span>
 								            </span>
-											<input type="text" class="form-control" id="depositAmount" name="depositAmount">
+											<input type="text" class="form-control" name="fields[depositAmount]">
 											<span class="input-group-addon">
 								                    <span>.00</span>
 								            </span>
@@ -152,7 +152,7 @@
 									</div>
 									<div class="col-sm-5">
 								      <label for="leaseDuration">Lease Duration:</label>
-									  <select class="form-control" id="leaseDuration" name="leaseDuration">
+									  <select class="form-control" name="fields[leaseDuration]">
 									  	<option value="-1">-- Select Length --</option>
 									    <option>1 Year</option>
 									    <option>6 Months</option>
@@ -166,7 +166,7 @@
 									<div class="col-sm-5">
 										<label for="dateAvailable">Date Available:</label>
 										<div class="input-group date" id="dateAvailablePicker">
-											<input type="text" class="form-control" name="dateAvailable">
+											<input type="text" class="form-control" name="fields[dateAvailable]">
 											<span class="input-group-addon">
 							                    <span class="glyphicon glyphicon-calendar"></span>
 							                </span>
@@ -176,14 +176,14 @@
 								<div class="form-group">
 									<div class="col-sm-12">
 									    <label for="leaseDetails">Additional Lease Details:</label>
-									    <textarea class="form-control" rows="5" id="leaseDetails" name="leaseDetails"></textarea>
+									    <textarea class="form-control" rows="5" name="fields[leaseDetails]"></textarea>
 							      	</div>
 							    </div>
 							    <h3>Rental Details</h3>
 							    <div class="form-group">
 									<div class="col-sm-5">
 								      <label for="propertyType">Property Type:</label>
-									  <select class="form-control" id="propertyType" name="propertyType">
+									  <select class="form-control" name="fields[propertyType]">
 									  	<option value="-1">-- Select Type --</option>
 									    <option>Apartment</option>
 									    <option>Condo</option>
@@ -196,14 +196,14 @@
 									<div class="col-sm-5">
 										<div class="checkbox">
 											<br>
-										  <label for="roomForRent"><input type="checkbox" id="roomForRent" name="roomForRent" value="Room for Rent">Room for Rent</label>
+										  <label for="roomForRent"><input type="checkbox" name="fields[roomForRent]" value="Room for Rent">Room for Rent</label>
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-5">
 								      <label for="bedrooms">Bed Rooms:</label>
-									  <select class="form-control" id="bedrooms" name="bedrooms">
+									  <select class="form-control" name="fields[bedrooms]">
 									  	<option value="-1">-- Select Beds --</option>
 									    <option>Studion</option>
 									    <option>1 Bed</option>
@@ -216,7 +216,7 @@
 									</div>
 									<div class="col-sm-5">
 								      <label for="bathrooms">Bath Rooms:</label>
-									  <select class="form-control" id="bathrooms" name="bathrooms">
+									  <select class="form-control" name="fields[bathrooms]">
 									  	<option value="-1">-- Select Baths --</option>
 									    <option>1 Bath</option>
 									    <option>1.5 Baths</option>
@@ -235,18 +235,18 @@
 								<div class="form-group">
 									<div class="col-sm-5">
 										<label for="squareFeet">Square Feet:</label>
-										<input type="text" class="form-control" id="squareFeet" name="squareFeet">
+										<input type="text" class="form-control" name="fields[squareFeet]">
 									</div>
 									<div class="col-sm-5">
 										<label for="unitFloor">Unit Floor:</label>
-										<input type="text" class="form-control" id="unitFloor" name="unitFloor">
+										<input type="text" class="form-control" name="fields[unitFloor]">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-5">
 										<label for="yearBuilt">Year Built:</label>
 										<div class="input-group date" id="yearBuiltPicker">
-											<input type="text" class="form-control" name="yearBuilt">
+											<input type="text" class="form-control" name="fields[yearBuilt]">
 											<span class="input-group-addon">
 							                    <span class="glyphicon glyphicon-calendar"></span>
 							                </span>
@@ -256,14 +256,14 @@
 								<div class="form-group">
 									<div class="col-sm-5">
 										<div class="checkbox">
-										  <label for="furnished"><input type="checkbox" id="furnished" name="furnished">Furnished</label>
+										  <label for="furnished"><input type="checkbox" name="fields[furnished]">Furnished</label>
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-5">
 								      <label for="parkingSpaces">Parking Spaces:</label>
-									  <select class="form-control" id="parkingSpaces" name="parkingSpaces">
+									  <select class="form-control" name="fields[parkingSpaces]">
 									  	<option value="-1">-- Select --</option>
 									    <option>None</option>
 									    <option>1</option>
@@ -274,7 +274,7 @@
 									</div>
 									<div class="col-sm-5">
 								      <label for="parkingType">Parking Type:</label>
-									  <select class="form-control" id="parkingType" name="parkingType">
+									  <select class="form-control" name="fields[parkingType]">
 									  	<option value="-1">-- Select Type --</option>
 									    <option>Garage</option>
 									    <option>Carport</option>
@@ -288,9 +288,9 @@
 										<label for="petPolicy">Pet Policy:</label>
 									</div>
 									<div class="col-sm-9">
-										<label class="checkbox-inline"><input type="checkbox" id="petPolicy" name="petPolicy" value="No Pets Allowed">No Pets Allowed</label>
-										<label class="checkbox-inline"><input type="checkbox" id="petPolicy" name="petPolicy" value="Dogs OK">Dogs OK</label>
-										<label class="checkbox-inline"><input type="checkbox" id="petPolicy" name="petPolicy" value="Cats OK">Cats OK</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[petPolicy]" value="No Pets Allowed">No Pets Allowed</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[petPolicy]" value="Dogs OK">Dogs OK</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[petPolicy]" value="Cats OK">Cats OK</label>
 									</div>
 								</div>
 								<div class="form-group">
@@ -343,99 +343,99 @@
 							    <div class="form-group">
 									<div class="col-sm-9">
 										<label for="propertyTitle">Property Title:</label>
-										<input type="text" class="form-control" id="propertyTitle" name="propertyTitle">
+										<input type="text" class="form-control" name="fields[propertyTitle]">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-9">
 									    <label for="propertyDescription">Property Description:</label>
-									    <textarea class="form-control" rows="5" id="propertyDescription" name="propertyDescription"></textarea>
+									    <textarea class="form-control" rows="5" name="fields[propertyDescription]"></textarea>
 							      	</div>
 							    </div>
 							    <div class="form-group">
 									<div class="col-sm-9">
 										<label for="propertyWebsiteUrl">Property Website URL:</label>
-										<input type="text" class="form-control" id="propertyWebsiteUrl" name="propertyWebsiteUrl">
+										<input type="text" class="form-control" name="fields[propertyWebsiteUrl]">
 									</div>
 								</div>
 								<h3>Unit Features</h3>
 								<label for="rooms">Rooms:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Living Room">Living Room</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="1">Living Room</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Dining Room">Dining Room</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="2">Dining Room</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Family Room or Den">Family Room or Den</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="3">Family Room or Den</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Waiting or Front Room">Waiting or Front Room</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Waiting or Front Room">Waiting or Front Room</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Mult-Purpose Hall">Mult-Purpose Hall</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Mult-Purpose Hall">Mult-Purpose Hall</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Pooja Room">Pooja Room</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Pooja Room">Pooja Room</label>
 									</div>
 								</div>
 								<div id="Rooms" title="Rooms" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Dress Room">Dress Room</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Dress Room">Dress Room</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Laundary Room">Laundary Room</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Laundary Room">Laundary Room</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Utility Room">Utility Room</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Kitchen">Kitchen</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Office or Study Room">Office or Study Room</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Sun Room or Sit Out">Sun Room or Sit Out</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Utility Room">Utility Room</label>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Walk-in Closet">Walk-in Closet</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Kitchen">Kitchen</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Pantry">Pantry</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Office or Study Room">Office or Study Room</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Foyer">Foyer</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Lounge">Lounge</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Solarium or Atrium">Solarium or Atrium</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Basement">Basement</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Sun Room or Sit Out">Sun Room or Sit Out</label>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Bar">Bar</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Walk-in Closet">Walk-in Closet</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Store Room">Store Room</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Pantry">Pantry</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[rooms]" name="amenities[rooms]" value="Maid's Room">Maid &#39;s Room</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Foyer">Foyer</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Lounge">Lounge</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Solarium or Atrium">Solarium or Atrium</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Basement">Basement</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Bar">Bar</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Store Room">Store Room</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Maid's Room">Maid &#39;s Room</label>
 										</div>
 									</div>
 								</div>
@@ -445,47 +445,47 @@
 								<label for="exterior">Exterior:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Private Pool">Private Pool</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Private Pool">Private Pool</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Verandah">Verandah</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Verandah">Verandah</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Balcony, Dec or Patio">Balcony, Deck or Patio</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Balcony, Dec or Patio">Balcony, Deck or Patio</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Open Terrace">Open Terrace</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Open Terrace">Open Terrace</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Yard">Yard</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Yard">Yard</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Lawn">Lawn</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Lawn">Lawn</label>
 									</div>
 								</div>
 								<div id="Exteriors" title="Exteriors" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Pond">Pond</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Pond">Pond</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Lake">Lake</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Lake">Lake</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Porch">Porch</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Porch">Porch</label>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Garden">Garden</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Garden">Garden</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Sprinkler System">Sprinkler System</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Sprinkler System">Sprinkler System</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[exterior]" name="amenities[exterior]" value="Greenhouse">Greenhouse</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Greenhouse">Greenhouse</label>
 										</div>
 									</div>
 								</div>
@@ -495,33 +495,33 @@
 								<label for="appliances">Appliances:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[appliances]" name="amenities[appliances]" value="Range or Oven">Range or Oven</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Range or Oven">Range or Oven</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[appliances]" name="amenities[appliances]" value="Refrigerator">Refrigerator</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Refrigerator">Refrigerator</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[appliances]" name="amenities[appliances]" value="Dishwasher">Dishwasher</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Dishwasher">Dishwasher</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[appliances]" name="amenities[appliances]" value="Microwave">Microwave</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Microwave">Microwave</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[appliances]" name="amenities[appliances]" value="Garbage disposal">Garbage disposal</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Garbage disposal">Garbage disposal</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[appliances]" name="amenities[appliances]" value="Stainless Steel Appliances">Stainless Steel Appliances</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Stainless Steel Appliances">Stainless Steel Appliances</label>
 									</div>
 								</div>
 								<div id="Appliances" title="Appliances" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[appliances]" name="amenities[appliances]" value="Freezer">Freezer</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Freezer">Freezer</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" id="amenities[appliances]" name="amenities[appliances]" value="Trash compactor">Trash compactor</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Trash compactor">Trash compactor</label>
 										</div>
 									</div>
 								</div>
@@ -531,64 +531,64 @@
 								<label for="coolingAndHeating">Cooling &amp; Heating:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[coolingAndHeating]" name="amenities[coolingAndHeating]" value="Central A/C">Central A/C</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Central A/C">Central A/C</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[coolingAndHeating]" name="amenities[coolingAndHeating]" value="Air Conditioning">Air Conditioning</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Air Conditioning">Air Conditioning</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" id="amenities[coolingAndHeating]" name="amenities[coolingAndHeating]" value="Ceiling fans">Ceiling fans</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Ceiling fans">Ceiling fans</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Heat: forced air</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Heat: forced air</label>
 									</div>
 								</div>
 								<label for="wriring">Wiring:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Cable-ready</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Cable-ready</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">High-speed Internet</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">High-speed Internet</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Wired</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Wired</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Intercom system</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Intercom system</label>
 									</div>
 								</div>
 								<label for="additionalFeatures">Additional Features:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Tile floor</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Tile floor</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Marble floor</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Marble floor</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Hardwood floor</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Hardwood floor</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Granite floor</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Granite floor</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">High/Vaulted Cealing</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">High/Vaulted Cealing</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Granite Countertop</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Granite Countertop</label>
 									</div>
 								</div>
 								<div id="AdditionalFeatures" title="Additional Features" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Fire Place</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Fire Place</label>
 										</div>
 									</div>
 								</div>
@@ -599,50 +599,50 @@
 								<label for="buildingType">Building Type:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">New Property</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">New Property</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Waterfront</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Waterfront</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Vintage Building</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Vintage Building</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Loft Layout</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Loft Layout</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Assisted Living</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Assisted Living</label>
 									</div>
 								</div>
 								<label for="petpolicy">Security &amp; Access:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Elevator</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Elevator</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Secured Entry</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Secured Entry</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Controlled Access</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Controlled Access</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Gated Entry</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Gated Entry</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Security System</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Security System</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Doorman</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Doorman</label>
 									</div>
 								</div>
 								<div id="SnR" title="Security &amp; Access" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Disability Access</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Disability Access</label>
 										</div>
 									</div>
 								</div>
@@ -652,58 +652,58 @@
 								<label for="petpolicy">Facilities &amp; Recreation:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Shared Pool</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Shared Pool</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Fitness Center</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Fitness Center</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Clubhouse</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Clubhouse</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Squash Court</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Squash Court</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Table Tennis</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Table Tennis</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Indoor Badminton</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Indoor Badminton</label>
 									</div>
 								</div>
 								<div id="FnR" title="Facilities &amp; Recreation" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Children Play Area</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Children Play Area</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Tennis Court</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Tennis Court</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Golf Course</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Library</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Business Center</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Billiards Room</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Golf Course</label>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Near Transportation</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Library</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Spa &amp; Saloon</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Business Center</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" value="">Barbecue</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Billiards Room</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Near Transportation</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Spa &amp; Saloon</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Barbecue</label>
 										</div>
 									</div>
 								</div>
@@ -713,24 +713,24 @@
 								<label for="communalParking">Communal Parking:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Guest Parking</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Guest Parking</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Off-Street Parking</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Off-Street Parking</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Covered Parking</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Covered Parking</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">On-Street Parking</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">On-Street Parking</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Garage - Attached</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Garage - Attached</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" value="">Garage - Detached</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Garage - Detached</label>
 									</div>
 								</div>
 								<div class="form-group">
@@ -755,95 +755,95 @@
 							    <div class="form-group">
 							    	<div class="col-sm-4">
 							    		<label for="showRentAmount">Rent</label>
-							    		<p data-preview="rentAmount" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[rentAmount]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    	<div class="col-sm-4">
 							    		<label for="showDepositAmount">Deposit</label>
-							    		<p data-preview="depositAmount" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[depositAmount]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    	<div class="col-sm-4">
 							    		<label for="showLeaseDuration">Lease Duration</label>
-							    		<p data-preview="leaseDuration" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[leaseDuration]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    </div>
 							    <div class="form-group">
 							    	<div class="col-sm-4">
 							    		<label for="showDateAvailable">Date Available</label>
-							    		<p data-preview="dateAvailable" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[dateAvailable]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    </div>
 							    <div class="form-group">
 							    	<div class="col-sm-12">
 							    		<label for="showLeaseDetails">Lease Terms</label>
-							    		<p data-preview="leaseDetails" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[leaseDetails]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    </div>
 							    <h4>Property Details</h4>
 							    <div class="form-group">
 							    	<div class="col-sm-4">
 							    		<label for="showPropertyType">Property Type</label>
-							    		<p data-preview="propertyType" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[propertyType]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    	<div class="col-sm-4">
 							    		<label for="showBedrooms">Bedrooms</label>
-							    		<p data-preview="bedrooms" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[bedrooms]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    	<div class="col-sm-4">
 							    		<label for="showBathrooms">Bathrooms</label>
-							    		<p data-preview="bathrooms" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[bathrooms]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    </div>
 							    <div class="form-group">
 							    	<div class="col-sm-4">
 							    		<label for="showSquareFeet">Square Feet</label>
-							    		<p data-preview="squareFeet" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[squareFeet]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    	<div class="col-sm-4">
 							    		<label for="showUnitFloor">Unit Floor</label>
-							    		<p data-preview="unitFloor" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[unitFloor]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    	<div class="col-sm-4">
 							    		<label for="showYearBuilt">Year Built</label>
-							    		<p data-preview="yearBuilt" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[yearBuilt]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    </div>
 							    <div class="form-group">
 							    	<div class="col-sm-4">
 							    		<label for="showFurnished">Furnished</label>
-							    		<p data-preview="furnished" class="form-control-static"></p>
+							    		<p data-preview="fields[furnished]" class="form-control-static"></p>
 							    	</div>
 							    	<div class="col-sm-4">
 							    		<label for="showPetPolicy">Pet Policy</label>
-							    		<p data-preview="petPolicy" class="form-control-static"></p>
+							    		<p data-preview="fields[petPolicy]" class="form-control-static"></p>
 							    	</div>
 							    	<div class="col-sm-4">
 							    		<label for="showParkingSpaces">Parking Spaces</label>
-							    		<p data-preview="parkingSpaces" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[parkingSpaces]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    </div>
 							    <div class="form-group">
 							    	<div class="col-sm-4">
 							    		<label for="showParkingType">Parking Type</label>
-							    		<p data-preview="parkingType" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[parkingType]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    </div>
 							    <h4>Property Description</h4>
 							    <div class="form-group">
 							    	<div class="col-sm-12">
 							    		<label for="showPropertyTitle">Property Title</label>
-							    		<p data-preview="propertyTitle" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[propertyTitle]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    </div>
 							    <div class="form-group">
 							    	<div class="col-sm-12">
 							    		<label for="showPropertyDescription">Property Description</label>
-							    		<p data-preview="propertyDescription" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[propertyDescription]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    </div>
 							    <div class="form-group">
 							    	<div class="col-sm-12">
 							    		<label for="showPropertyWebsiteUrl">Property Website URL</label>
-							    		<p data-preview="propertyWebsiteUrl" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[propertyWebsiteUrl]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    </div>
 							    <h4>Amenities</h4>
@@ -860,21 +860,21 @@
 							    <div class="form-group">
 							    	<div class="col-sm-4">
 							    		<label for="showContactName">Contact Name</label>
-							    		<p data-preview="contactName" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[contactName]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    	<div class="col-sm-4">
 							    		<label for="showCompanyName">Company</label>
-							    		<p data-preview="companyName" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[companyName]" data-pattern="%s" class="form-control-static"></p>
 							    	</div> 
 							    </div>
 							    <div class="form-group">
 							    	<div class="col-sm-4">
 							    		<label for="showPhone">Phone</label>
-							    		<p data-preview="phone" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[phone]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    	<div class="col-sm-4">
 							    		<label for="showEmail">Email Address</label>
-							    		<p data-preview="email" data-pattern="%s" class="form-control-static"></p>
+							    		<p data-preview="fields[email]" data-pattern="%s" class="form-control-static"></p>
 							    	</div> 
 							    </div>
 								<div class="col-sm-12">

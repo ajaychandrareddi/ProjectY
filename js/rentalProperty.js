@@ -19,11 +19,11 @@ $(document).ready(function(){
 	$("#preview").preview({
         form : '#rentalPropertyForm',
         fields : 'input[type=checkbox]',
-        event  : 'onclick',
-        init   : function (preview) {
-        	preview.fields.each(function(){
-        		$this = $(this).context.name;
-        		console.log($this);
+        event  : 'change',
+        init   : function (preview) {	
+        	preview.fields.each(function(a, b){
+        		var $fieldname = $(this).context.name);
+        			if $fieldname
         	})
         }
      });
@@ -82,43 +82,42 @@ $(document).ready(function(){
 	        validating: 'glyphicon glyphicon-refresh'
 	    },
 	    fields: {
-	    	streetAddress: {
-	    		message: 'Street address is not valid',
+	    	'fields[streetAddress]': {
 	    			validators: {
 	    				notEmpty: {
 	    					message: 'Street address is required and cannot be empty'
 	    					  }
 	    				 }
 	    			},
-	    	province: {
+			'fields[province]': {
 	            validators: {
 	            	notEmpty: {
 	                    message: 'The state is required and can\'t be empty'
 	            			}
 	            		}
 	                },
-			region: {
+            'fields[region]': {
 	            validators: {
 	            	notEmpty: {
 	                    message: 'The division is required and can\'t be empty'
 	            			}
 	            		}
 	                },
-			city: {
+            'fields[city]': {
 	            validators: {
 	            	notEmpty: {
 	                    message: 'The city is required and can\'t be empty'
 	            			}
 	            		}
 	                },
-            'forRentBy[]': {
+            'fields[forRentBy]': {
 	            validators: {
 	            	notEmpty: {
 	                    message: 'For rent by is required and can\'t be empty'
 	            			}
 	            		}
 	                },
-            phoneNumber: {
+            'fields[phoneNumber]': {
 	            validators: {
 	            	notEmpty: {
 	                    message: 'The phone number is required and can\'t be empty'
@@ -129,7 +128,7 @@ $(document).ready(function(){
 	                		}
             			}
 	                },
-            rentAmount: {
+            'fields[rentAmount]': {
             	validators: {
 	            	notEmpty: {
 	                    message: 'The rent amount is required and can\'t be empty'
@@ -139,14 +138,14 @@ $(document).ready(function(){
                 		}
             		}
                 },
-            depositAmount: {
+            'fields[depositAmount]': {
             	validators: {
             		integer: {
         			    message: 'The deposit amount should be a numeric value'	
             			}
             		}
             	},
-        	dateAvailable: {
+        	'fields[dateAvailable]': {
         		validators: {
         			notEmpty: {
         			    message: 'The date available is required and can\'t be empty'	
@@ -157,42 +156,42 @@ $(document).ready(function(){
                         }
         			}
         		},
-    		propertyType: {
+    		'fields[propertyType]': {
 	            validators: {
 	            	notEmpty: {
 	                    message: 'The property type is required and can\'t be empty'
 	            		}
 	            	}
 	            },
-	        bedrooms: {
+            'fields[bedrooms]': {
 	            validators: {
 	            	notEmpty: {
 	                    message: 'The number of bedrooms is required and can\'t be empty'
 	            		}
 	            	}
 	            },
-            bathrooms: {
+            'fields[bathrooms]': {
 	            validators: {
 	            	notEmpty: {
 	                    message: 'The number of bathrooms is required and can\'t be empty'
 	            		}
 	            	}
 	            },
-            squareFeet: {
+            'fields[squareFeet]': {
             	validators: {
                 	integer: {
         			    message: 'The square feet should be a numberic value'	
                 		}
             		}
                 },
-            unitFloor: {
+            'fields[unitFloor]': {
             	validators: {
                 	integer: {
         			    message: 'The unit floor should be a numberic value'	
                 		}
             		}
                 },
-            yearBuilt: {
+            'fields[yearBuilt]': {
         		validators: {
         			callback: {
                         message: 'The year is not valid',
@@ -206,14 +205,14 @@ $(document).ready(function(){
                         }
         			}
         		},
-    		propertyTitle: {
+    		'fields[propertyTitle]': {
     			validators: {
 	            	notEmpty: {
 	                    message: 'The property title is required and can\'t be empty'
 	            		}
 	            	}
     			},
-			propertyWebsiteUrl: {
+			'fields[propertyWebsiteUrl]': {
 				validators: {
                     uri: {
                         allowLocal: true,
@@ -223,5 +222,4 @@ $(document).ready(function(){
 				}
             }
 		});
-
 });

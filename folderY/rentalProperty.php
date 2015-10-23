@@ -13,9 +13,10 @@
   <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../vendor/bootstrapValidator/css/bootstrapValidator.min.css">
   <link rel="stylesheet" href="../vendor/bootstrapValidator/css/bootstrap-datetimepicker.min.css">
-  <link rel="stylesheet" href="../vendor/blueimp/css/blueimp-gallery.min.css">
   <link rel="stylesheet" href="../vendor/jquery/css/jquery.fileupload.css">
   <link rel="stylesheet" href="../vendor/jquery/css/jquery.fileupload-ui.css">
+  <link rel="stylesheet" href="../vendor/blueimp/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" href="../vendor/blueimp/css/blueimp-gallery-indicator.css">
   
   <!-- Local Use -->
   <link rel="stylesheet" href="../css/main.css">
@@ -29,15 +30,15 @@
 	  				<div class='col-sm-1'></div>
   					<div class='col-sm-9'>
 			  			<ul class="nav nav-tabs">
-						  	<li class="active"><a data-toggle="tab" href="#location">Location <i class="fa"></i></a></li>
-						  	<li><a data-toggle="tab" href="#contactInfo">Contact Info <i class="fa"></i></a></li>
-						  	<li><a data-toggle="tab" href="#basicDetails">Basic Details <i class="fa"></i></a></li>
-						  	<li><a data-toggle="tab" href="#photosMedia">Photos &amp; Media <i class="fa"></i></a></li>
-						  	<li><a data-toggle="tab" href="#description">Description <i class="fa"></i></a></li>
+						  	<li class="active"><a data-toggle="tab" href="#location">Location </i></a></li>
+						  	<li><a data-toggle="tab" href="#contactInfo">Contact Info </a></li>
+						  	<li><a data-toggle="tab" href="#basicDetails">Basic Details </a></li>
+						  	<li><a data-toggle="tab" href="#photosMedia">Photos &amp; Media </a></li>
+						  	<li><a data-toggle="tab" href="#description">Description </a></li>
 						  	<li><a data-toggle="tab" href="#preview">Review</a></li>
 						  	<li><a data-toggle="tab" href="#listingStatus">Listing Status</a></li>
 						</ul>
-					<form id="rentalPropertyForm" name="rentalPropertyForm" class="form-horizontal" role="form">
+					<form id="rentalPropertyForm" name="rentalPropertyForm" class="form-horizontal" role="form" method="post" action="#listingStatus">
 						<div class="tab-content">
 							<div id="location" class="tab-pane fade in active">
 								<h3>Location</h3>
@@ -78,13 +79,13 @@
 								    	<div class="col-sm-9">
 								    	<label for="forRentBy">For Rent By:</label>
 									    <div class="radio">
-										  <label><input type="radio" name="fields[forRentBy]">Management Company/Broker</label>
+										  <label for="forRentBy[1]"><input type="radio" id="forRentBy[1]" name="fields[forRentBy]" value="1">Management Company/Broker</label>
 										</div>
 										<div class="radio">
-										  <label><input type="radio" name="fields[forRentBy]">Owner</label>
+										  <label for="forRentBy[2]"><input type="radio" id="forRentBy[2]" name="fields[forRentBy]" value="2">Owner</label>
 										</div>
 										<div class="radio">
-										  <label><input type="radio" name="fieldsforRentBy]">Tenant</label>
+										  <label for="forRentBy[3]"><input type="radio" id="forRentBy[3]" name="fieldsforRentBy]" value="3">Tenant</label>
 										</div>
 									</div>
 								</div>
@@ -196,7 +197,7 @@
 									<div class="col-sm-5">
 										<div class="checkbox">
 											<br>
-										  <label for="roomForRent"><input type="checkbox" name="fields[roomForRent]" value="Room for Rent">Room for Rent</label>
+										  <label for="roomForRent"><input type="checkbox" name="fields[roomForRent]">Room for Rent</label>
 										</div>
 									</div>
 								</div>
@@ -256,7 +257,7 @@
 								<div class="form-group">
 									<div class="col-sm-5">
 										<div class="checkbox">
-										  <label for="furnished"><input type="checkbox" name="fields[furnished]">Furnished</label>
+										  <label for="furnished"><input type="checkbox" id="furnished" name="fields[furnished]" value="Furnished">Furnished</label>
 										</div>
 									</div>
 								</div>
@@ -288,9 +289,9 @@
 										<label for="petPolicy">Pet Policy:</label>
 									</div>
 									<div class="col-sm-9">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[petPolicy]" value="No Pets Allowed">No Pets Allowed</label>
-										<label class="checkbox-inline"><input type="checkbox" name="fields[petPolicy]" value="Dogs OK">Dogs OK</label>
-										<label class="checkbox-inline"><input type="checkbox" name="fields[petPolicy]" value="Cats OK">Cats OK</label>
+										<label class="checkbox-inline" for="petPolicy[1]"><input type="checkbox" id="petPolicy[1]" name="fields[petPolicy]">No Pets Allowed</label>
+										<label class="checkbox-inline" for="petPolicy[2]"><input type="checkbox" id="petPolicy[2]" name="fields[petPolicy]">Dogs OK</label>
+										<label class="checkbox-inline" for="petPolicy[3]"><input type="checkbox" id="petPolicy[3]" name="fields[petPolicy]">Cats OK</label>
 									</div>
 								</div>
 								<div class="form-group">
@@ -362,80 +363,80 @@
 								<label for="rooms">Rooms:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="1">Living Room</label>
+										<label class="checkbox-inline" for="rooms[1]"><input type="checkbox" id="rooms[1]" name="fields[amenities][]">Living Room</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="2">Dining Room</label>
+										<label class="checkbox-inline" for="rooms[2]"><input type="checkbox" id="rooms[2]" name="fields[amenities][]">Dining Room</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="3">Family Room or Den</label>
+										<label class="checkbox-inline" for="rooms[3]"><input type="checkbox" id="rooms[3]" name="fields[amenities][]">Family Room or Den</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Waiting or Front Room">Waiting or Front Room</label>
+										<label class="checkbox-inline" for="rooms[4]"><input type="checkbox" id="rooms[4]" name="fields[amenities][]">Waiting or Front Room</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Mult-Purpose Hall">Mult-Purpose Hall</label>
+										<label class="checkbox-inline" for="rooms[5]"><input type="checkbox" id="rooms[5]" name="fields[amenities][]">Mult-Purpose Hall</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Pooja Room">Pooja Room</label>
+										<label class="checkbox-inline" for="rooms[6]"><input type="checkbox" id="rooms[6]" name="fields[amenities][]">Pooja Room</label>
 									</div>
 								</div>
 								<div id="Rooms" title="Rooms" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Dress Room">Dress Room</label>
+											<label class="checkbox-inline" for="rooms[7]"><input type="checkbox" id="rooms[7]" name="fields[amenities][]">Dress Room</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Laundary Room">Laundary Room</label>
+											<label class="checkbox-inline" for="rooms[8]"><input type="checkbox" id="rooms[8]" name="fields[amenities][]">Laundary Room</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Utility Room">Utility Room</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Kitchen">Kitchen</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Office or Study Room">Office or Study Room</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Sun Room or Sit Out">Sun Room or Sit Out</label>
+											<label class="checkbox-inline" for="rooms[9]"><input type="checkbox" id="rooms[9]" name="fields[amenities][]">Utility Room</label>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Walk-in Closet">Walk-in Closet</label>
+											<label class="checkbox-inline" for="rooms[10]"><input type="checkbox" id="rooms[10]" name="fields[amenities][]">Kitchen</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Pantry">Pantry</label>
+											<label class="checkbox-inline" for="rooms[11]"><input type="checkbox" id="rooms[11]" name="fields[amenities][]">Office or Study Room</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Foyer">Foyer</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Lounge">Lounge</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Solarium or Atrium">Solarium or Atrium</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Basement">Basement</label>
+											<label class="checkbox-inline" for="rooms[12]"><input type="checkbox" id="rooms[12]" name="fields[amenities][]">Sun Room or Sit Out</label>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Bar">Bar</label>
+											<label class="checkbox-inline" for="rooms[13]"><input type="checkbox" id="rooms[13]" name="fields[amenities][]">Walk-in Closet</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Store Room">Store Room</label>
+											<label class="checkbox-inline" for="rooms[14]"><input type="checkbox" id="rooms[14]" name="fields[amenities][]">Pantry</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Maid's Room">Maid &#39;s Room</label>
+											<label class="checkbox-inline" for="rooms[15]"><input type="checkbox" id="rooms[15]" name="fields[amenities][]">Foyer</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline" for="rooms[16]"><input type="checkbox" id="rooms[16]" name="fields[amenities][]">Lounge</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline" for="rooms[17]"><input type="checkbox" id="rooms[17]" name="fields[amenities][]">Solarium or Atrium</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline" for="rooms[18]"><input type="checkbox" id="rooms[18]" name="fields[amenities][]">Basement</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline" for="rooms[19]"><input type="checkbox" id="rooms[19]" name="fields[amenities][]">Bar</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline" for="rooms[20]"><input type="checkbox" id="rooms[20]" name="fields[amenities][]">Store Room</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline" for="rooms[21]"><input type="checkbox" id="rooms[21]" name="fields[amenities][]">Maid &#39;s Room</label>
 										</div>
 									</div>
 								</div>
@@ -445,47 +446,47 @@
 								<label for="exterior">Exterior:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Private Pool">Private Pool</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Private Pool</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Verandah">Verandah</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Verandah</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Balcony, Dec or Patio">Balcony, Deck or Patio</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Balcony, Deck or Patio</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Open Terrace">Open Terrace</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Open Terrace</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Yard">Yard</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Yard</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Lawn">Lawn</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Lawn</label>
 									</div>
 								</div>
 								<div id="Exteriors" title="Exteriors" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Pond">Pond</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Pond</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Lake">Lake</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Lake</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Porch">Porch</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Porch</label>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Garden">Garden</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Garden</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Sprinkler System">Sprinkler System</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Sprinkler System</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Greenhouse">Greenhouse</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Greenhouse</label>
 										</div>
 									</div>
 								</div>
@@ -495,33 +496,33 @@
 								<label for="appliances">Appliances:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Range or Oven">Range or Oven</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Range or Oven</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Refrigerator">Refrigerator</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Refrigerator</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Dishwasher">Dishwasher</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Dishwasher</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Microwave">Microwave</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Microwave</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Garbage disposal">Garbage disposal</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Garbage disposal</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Stainless Steel Appliances">Stainless Steel Appliances</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Stainless Steel Appliances</label>
 									</div>
 								</div>
 								<div id="Appliances" title="Appliances" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Freezer">Freezer</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Freezer</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Trash compactor">Trash compactor</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Trash compactor</label>
 										</div>
 									</div>
 								</div>
@@ -531,64 +532,64 @@
 								<label for="coolingAndHeating">Cooling &amp; Heating:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Central A/C">Central A/C</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Central A/C</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Air Conditioning">Air Conditioning</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Air Conditioning</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="Ceiling fans">Ceiling fans</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Ceiling fans</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Heat: forced air</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Heat: forced air</label>
 									</div>
 								</div>
 								<label for="wriring">Wiring:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Cable-ready</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Cable-ready</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">High-speed Internet</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">High-speed Internet</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Wired</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Wired</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Intercom system</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Intercom system</label>
 									</div>
 								</div>
 								<label for="additionalFeatures">Additional Features:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Tile floor</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Tile floor</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Marble floor</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Marble floor</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Hardwood floor</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Hardwood floor</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Granite floor</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Granite floor</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">High/Vaulted Cealing</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">High/Vaulted Cealing</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Granite Countertop</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Granite Countertop</label>
 									</div>
 								</div>
 								<div id="AdditionalFeatures" title="Additional Features" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Fire Place</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Fire Place</label>
 										</div>
 									</div>
 								</div>
@@ -599,50 +600,50 @@
 								<label for="buildingType">Building Type:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">New Property</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">New Property</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Waterfront</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Waterfront</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Vintage Building</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Vintage Building</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Loft Layout</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Loft Layout</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Assisted Living</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Assisted Living</label>
 									</div>
 								</div>
 								<label for="petpolicy">Security &amp; Access:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Elevator</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Elevator</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Secured Entry</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Secured Entry</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Controlled Access</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Controlled Access</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Gated Entry</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Gated Entry</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Security System</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Security System</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Doorman</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Doorman</label>
 									</div>
 								</div>
 								<div id="SnR" title="Security &amp; Access" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Disability Access</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Disability Access</label>
 										</div>
 									</div>
 								</div>
@@ -652,58 +653,58 @@
 								<label for="petpolicy">Facilities &amp; Recreation:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Shared Pool</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Shared Pool</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Fitness Center</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Fitness Center</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Clubhouse</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Clubhouse</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Squash Court</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Squash Court</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Table Tennis</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Table Tennis</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Indoor Badminton</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Indoor Badminton</label>
 									</div>
 								</div>
 								<div id="FnR" title="Facilities &amp; Recreation" class="collapse">
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Children Play Area</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Children Play Area</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Tennis Court</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Tennis Court</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Golf Course</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Library</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Business Center</label>
-										</div>
-										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Billiards Room</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Golf Course</label>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Near Transportation</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Library</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Spa &amp; Saloon</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Business Center</label>
 										</div>
 										<div class="col-sm-4">
-											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Barbecue</label>
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Billiards Room</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Near Transportation</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Spa &amp; Saloon</label>
+										</div>
+										<div class="col-sm-4">
+											<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Barbecue</label>
 										</div>
 									</div>
 								</div>
@@ -713,24 +714,24 @@
 								<label for="communalParking">Communal Parking:</label>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Guest Parking</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Guest Parking</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Off-Street Parking</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Off-Street Parking</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Covered Parking</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Covered Parking</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">On-Street Parking</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">On-Street Parking</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Garage - Attached</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Garage - Attached</label>
 									</div>
 									<div class="col-sm-4">
-										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]" value="">Garage - Detached</label>
+										<label class="checkbox-inline"><input type="checkbox" name="fields[amenities][]">Garage - Detached</label>
 									</div>
 								</div>
 								<div class="form-group">
@@ -746,6 +747,34 @@
 							    <div class="form-group">
 							    	<div class="col-sm-6">
 							    		<label for="showPhotos">Photos</label>
+							    		<div id="links" class="links">
+										    <a href="../images/home.jpg" title="Banana">
+										        <img src="../images/home.jpg" alt="Banana">
+										    </a>
+										    <a href="../images/home.jpg" title="Apple">
+										        <img src="../images/home.jpg" alt="Apple">
+										    </a>
+										    <a href="../images/home.jpg" title="Orange">
+										        <img src="../images/home.jpg" alt="Orange">
+										    </a>
+										</div>
+										<div id="blueimp-gallery" class="blueimp-gallery">
+										    <div class="slides"></div>
+										    <h3 class="title"></h3>
+										    <a class="prev">‹</a>
+										    <a class="next">›</a>
+										    <a class="close">×</a>
+										    <a class="play-pause"></a>
+										    <ol class="indicator"></ol>
+										</div>
+										<div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-controls blueimp-gallery-carousel">
+										    <div class="slides"></div>
+										    <h3 class="title"></h3>
+										    <a class="prev">‹</a>
+										    <a class="next">›</a>
+										    <a class="play-pause"></a>
+										    <ol class="indicator"></ol>
+										</div>
 							    	</div>
 							    	<div class="col-sm-6">
 							    		<div>Map</div>
@@ -847,13 +876,10 @@
 							    	</div>
 							    </div>
 							    <h4>Amenities</h4>
-							    <div class="form-group">
-										8
+							    <div class="form-group">					
 							    	<div class="col-sm-4">
-							    		g
-							    	</div>
-							    	<div class="col-sm-4">
-							    		g
+							    		<label for="amenities"></label>
+							    		<p data-preview="fields[amenities][]" data-pattern="%s" class="form-control-static"></p>
 							    	</div>
 							    </div>
 							    <h4>Contact Information</h4>
@@ -884,13 +910,13 @@
 									</ul>
 								</div>
 							</div>
+						</form>	
 							<div id="listingStatus" class="tab-pane fade">
 							    <h3>Listing Status</h3>
-							    <p>Some content in menu 2.</p>
+							    <pre><?php print_r($_POST); ?></pre>
 							</div>
 						</div>
-					</form>	
-				</div>
+				    </div>
 					<div class='col-sm-2'></div>
 			</div>
 	  	<?php footerCode(); ?>           
@@ -969,6 +995,8 @@
     		</tr>
 		{% } %}
 	</script>
+	
+	
 	<script src="../vendor/jquery/js/jquery.min.js"></script>  
   	<script src="../vendor/jquery/js/jquery.ui.widget.js"></script>
   	<script src="../vendor/blueimp/js/tmpl.min.js"></script>
@@ -978,18 +1006,20 @@
     <script src="../vendor/bootstrapValidator/js/bootstrapValidator.min.js"></script>
     <script src="../vendor/moment/js/moment.min.js"></script>
     <script src="../vendor/bootstrapValidator/js/bootstrap-datetimepicker.min.js"></script>
- 	<script src="../vendor/blueimp/js/jquery.blueimp-gallery.min.js"></script>
  	<script src="../vendor/jquery/js/jquery.iframe-transport.js"></script>
     <script src="../vendor/jquery/js/jquery.fileupload.js"></script>
     <script src="../vendor/jquery/js/jquery.fileupload-process.js"></script>
     <script src="../vendor/jquery/js/jquery.fileupload-image.js"></script>
-    <script src="../vendor/jquery/js/jquery.fileupload-audio.js"></script>
-    <script src="../vendor/jquery/js/jquery.fileupload-video.js"></script>
     <script src="../vendor/jquery/js/jquery.fileupload-validate.js"></script>
     <script src="../vendor/jquery/js/jquery.fileupload-ui.js"></script>
-    <script src="../vendor/jquery/js/main.js"></script>  
+    <script src="../vendor/jquery/js/main.js"></script>
     <script src="../vendor/geonames/js/jsr_class.js"></script>
     <script src="../vendor/formPreview/js/form-preview.min.js"></script>
+    <script src="../vendor/blueimp/js/blueimp-gallery.min.js"></script>
+    <script src="../vendor/blueimp/js/blueimp-gallery-indicator.js"></script>
+  	<script src="../vendor/blueimp/js/jquery.blueimp-gallery.min.js"></script>
+    
+
     
     <!-- local use -->
     <script src="../js/geonames.js"></script>

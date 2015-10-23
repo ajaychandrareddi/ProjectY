@@ -1,33 +1,57 @@
 $(document).ready(function(){
 	
+	document.getElementById('links').onclick = function (event) {
+	    event = event || window.event;
+	    var target = event.target || event.srcElement,
+	        link = target.src ? target.parentNode : target,
+	        options = {index: link, event: event},
+	        links = this.getElementsByTagName('a');
+	    blueimp.Gallery(links, options);
+	};
+	
+	blueimp.Gallery(
+		    document.getElementById('links').getElementsByTagName('a'),
+		    {
+		        container: '#blueimp-gallery-carousel',
+		        carousel: true
+		    }
+		);
+	
 	$("#preview").preview({
         form : '#rentalPropertyForm',
-        fields : 'input[type=text], select, textarea',
-        event  : 'input',
+        fields : 'input,select, textarea',
+        event  : 'change',
         init   : function (preview) {
         	preview.fields.each(function(){
-        		var $this = $(this).context.name;
-	        	preview.addProcessor($this, function (name, value, input) {
-	        		if (value === '' || value === '-1' || value === 'on') {
-	    				return '--';
-	    			}
-	        	})
-           })
-        }
-     });
-	
-	$("#preview").preview({
-        form : '#rentalPropertyForm',
-        fields : 'input[type=checkbox]',
-        event  : 'change',
-        init   : function (preview) {	
-        	preview.fields.each(function(a, b){
-        		var $fieldname = $(this).context.name);
-        			if $fieldname
+        		var $thisName = $(this).context.name;
+        		var $thisType = $(this).context.type;
+
+        		
+        		if ($thisType === 'checkbox'){
+        			preview.addProcessor($thisName, function (name, value, input) {
+        				var checkedValues = $("[name='"+$thisName+"']:checked");
+        				 if (checkedValues.length === 0){
+        					 return '--';
+        				 } else {
+        					 result = '';
+        					 checkedValues.each(function(){ 
+        						 result += $('label[for="'+$(this).attr('id')+'"]').text() + '<br/>'; 
+        					 })
+        					 return result;
+        				 }
+        			})
+        	    };
+        	    
+        	    if ($thisType === 'text' || $thisType === 'textarea' || $thisType === 'select-one'){
+	        		preview.addProcessor($thisName, function (name, value, input) {
+	        			if (value === '' || value === '-1' || value === 'on') {
+	        				return '--';
+	        			}
+	        		})
+        	    };
         	})
         }
-     });
-	
+    });
 	
 	$('#dateAvailablePicker').datetimepicker({
 		format: 'DD/MM/YYYY h:m A',
